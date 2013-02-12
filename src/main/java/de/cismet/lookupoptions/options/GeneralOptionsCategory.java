@@ -27,12 +27,22 @@ import de.cismet.lookupoptions.*;
 public class GeneralOptionsCategory extends AbstractOptionsCategory {
 
     //~ Methods ----------------------------------------------------------------
-
+    
+    /**
+     * Returns name of category used in list on the top side of Options Dialog.
+     * 
+     * @return name
+     */
     @Override
     public String getName() {
         return org.openide.util.NbBundle.getMessage(GeneralOptionsCategory.class, "GeneralOptionsCategory.name"); // NOI18N
     }
-
+    
+    /**
+     * Returns 32x32 icon used in list on the top of Options Dialog.
+     * 
+     * @return 32x32 Icon
+     */
     @Override
     public Icon getIcon() {
         final Image image = ImageUtilities.loadImage("de/cismet/lookupoptions/options/general.png"); // NOI18N
@@ -42,12 +52,22 @@ public class GeneralOptionsCategory extends AbstractOptionsCategory {
             return null;
         }
     }
-
+    
+    /**
+     * Returns the relative order of category in the Options Dialog.
+     * 
+     * @return "0"
+     */
     @Override
     public int getOrder() {
         return 0;
     }
 
+    /**
+     * Returns text for tooltip describing the category.
+     * 
+     * @return toolstip text
+     */
     @Override
     public String getTooltip() {
         return org.openide.util.NbBundle.getMessage(GeneralOptionsCategory.class, "GeneralOptionsCategory.tooltip"); // NOI18N

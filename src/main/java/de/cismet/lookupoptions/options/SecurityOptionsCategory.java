@@ -29,11 +29,21 @@ public class SecurityOptionsCategory extends AbstractOptionsCategory {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Returns name of category used in list on the top side of Options Dialog.
+     * 
+     * @return name
+     */
     @Override
     public String getName() {
         return org.openide.util.NbBundle.getMessage(SecurityOptionsCategory.class, "SecurityOptionsCategory.name"); // NOI18N
     }
 
+    /**
+     * Returns 32x32 icon used in list on the top of Options Dialog.
+     * 
+     * @return 32x32 Icon
+     */
     @Override
     public Icon getIcon() {
         final Image image = ImageUtilities.loadImage("de/cismet/lookupoptions/options/security.png"); // NOI18N
@@ -44,11 +54,21 @@ public class SecurityOptionsCategory extends AbstractOptionsCategory {
         }
     }
 
+    /**
+     * Returns the relative order of category in the Options Dialog.
+     * 
+     * @return "1"
+     */
     @Override
     public int getOrder() {
         return 1;
     }
 
+    /**
+     * Returns text for tooltip describing the category.
+     * 
+     * @return toolstip text
+     */
     @Override
     public String getTooltip() {
         return org.openide.util.NbBundle.getMessage(SecurityOptionsCategory.class, "SecurityOptionsCategory.tooltip"); // NOI18N

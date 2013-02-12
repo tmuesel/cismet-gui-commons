@@ -28,11 +28,21 @@ public class DefaultOptionsCategory extends AbstractOptionsCategory {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Returns name of category used in list on the top side of Options Dialog.
+     * 
+     * @return name
+     */
     @Override
     public String getName() {
         return org.openide.util.NbBundle.getMessage(DefaultOptionsCategory.class, "DefaultOptionsCategory.name"); // NOI18N
     }
 
+    /**
+     * Returns 32x32 icon used in list on the top of Options Dialog.
+     * 
+     * @return 32x32 Icon
+     */
     @Override
     public Icon getIcon() {
         final Image image = ImageUtilities.loadImage("de/cismet/lookupoptions/options/nocat.png"); // NOI18N
@@ -43,6 +53,11 @@ public class DefaultOptionsCategory extends AbstractOptionsCategory {
         }
     }
 
+    /**
+     * Returns text for tooltip describing the category.
+     * 
+     * @return toolstip text
+     */
     @Override
     public String getTooltip() {
         return org.openide.util.NbBundle.getMessage(DefaultOptionsCategory.class, "DefaultOptionsCategory.tooltip"); // NOI18N
