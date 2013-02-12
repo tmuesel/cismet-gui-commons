@@ -12,7 +12,7 @@
 package de.cismet.security;
 
 /**
- * DOCUMENT ME!
+ * Access through Tunnel
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -22,12 +22,12 @@ public interface Tunnel extends AccessHandler {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Checks whether the given URL is Responsible with the given method.
      *
-     * @param   method  DOCUMENT ME!
-     * @param   url     DOCUMENT ME!
+     * @param   method  access Method
+     * @param   url     URL as String
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>True</code>, if the URL is responsible, otherwise <code>false</code>
      */
     boolean isResponsible(AccessHandler.ACCESS_METHODS method, String url);
 }

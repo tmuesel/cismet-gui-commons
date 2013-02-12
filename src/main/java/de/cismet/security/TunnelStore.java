@@ -12,7 +12,7 @@
 package de.cismet.security;
 
 /**
- * DOCUMENT ME!
+ * Storage for Tunnel
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -22,15 +22,15 @@ public interface TunnelStore {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Sets the Tunnel to the given Tunnel
      *
-     * @param  tunnel  DOCUMENT ME!
+     * @param  tunnel  new Tunnel
      */
     void setTunnel(Tunnel tunnel);
     /**
-     * DOCUMENT ME!
+     * Returns the Tunnel
      *
-     * @return  DOCUMENT ME!
+     * @return  Tunnel
      */
     Tunnel getTunnel();
 }

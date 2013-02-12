@@ -197,18 +197,18 @@ public abstract class PasswordDialog extends LoginService {
     public abstract boolean authenticate(String name, char[] password, String server) throws Exception;
 
     /**
-     * DOCUMENT ME!
+     * Returns the status of {@link #isAuthenticationCanceled}
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>isAuthenticationCanceled</code>
      */
     public boolean isAuthenticationCanceled() {
         return isAuthenticationCanceled;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the Title for the Server
      *
-     * @param  title  DOCUMENT ME!
+     * @param  title  Title
      */
     public void setTitle(final String title) {
         this.title = title;

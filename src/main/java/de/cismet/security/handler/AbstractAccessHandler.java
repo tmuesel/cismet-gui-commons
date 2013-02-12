@@ -46,5 +46,5 @@ public abstract class AbstractAccessHandler implements AccessHandler {
         return doRequest(url, requestParameter, method, null);
     }
 
-    // idee methode die prüft ob ein Array/Liste von Options gesetzt ist
+    //ToDo idee methode die prüft ob ein Array/Liste von Options gesetzt ist
 }
