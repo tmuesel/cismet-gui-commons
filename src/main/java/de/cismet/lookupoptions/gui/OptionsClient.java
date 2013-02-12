@@ -61,9 +61,9 @@ public class OptionsClient implements Configurable {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the Instance
      *
-     * @return  DOCUMENT ME!
+     * @return  instance
      */
     public static OptionsClient getInstance() {
         return instance;
@@ -131,11 +131,11 @@ public class OptionsClient implements Configurable {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the option category specified by the the given category Class
      *
-     * @param   categoryClass  DOCUMENT ME!
+     * @param   categoryClass  category Class
      *
-     * @return  DOCUMENT ME!
+     * @return  option category
      */
     public OptionsCategory getCategory(final Class<? extends OptionsCategory> categoryClass) {
         return categoriesTable.get(categoryClass);
