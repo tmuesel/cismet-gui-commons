@@ -74,10 +74,8 @@ import de.cismet.tools.gui.StaticSwingTools;
  * <p>To use this specialized View, you have to use the constructor with an boolean flag e.g</p>
  *
  * <pre>
-{@Code
- *          final JTree t = new SlideableTree(true);
- *      }
- *    </pre>
+   <code>         final JTree t = new SlideableTree(true);</code>
+ *</pre>
  *
  * @author   dmeiers
  * @version  $Revision$, $Date$

@@ -30,11 +30,6 @@ public class SimpleBand implements Band, BandPrefixProvider {
 
     protected ArrayList<BandMember> members = new ArrayList<BandMember>();
 
-    /**
-     * DOCUMENT ME!
-     *
-     * @return  DOCUMENT ME!
-     */
     protected JLabel prefix = new JLabel();
     private Double min = null;
     private Double max = null;

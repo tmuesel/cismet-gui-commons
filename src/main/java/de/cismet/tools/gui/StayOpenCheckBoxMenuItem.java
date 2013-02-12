@@ -19,12 +19,13 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * An extension of JCheckBoxMenuItem that doesn't close the menu when selected.
+ * An extension of JCheckBoxMenuItem that doesn't close the menu when selected. see <a
+ * href="http://tips4java.wordpress.com/2010/09/12/keeping-menus-open/">
+ * http://tips4java.wordpress.com/2010/09/12/keeping-menus-open/</a>
  *
  * @author   Darryl
  * @author   jweintraut Erweiterung für Popup-Menüs
  * @version  $Revision$, $Date$
- * @url      http://tips4java.wordpress.com/2010/09/12/keeping-menus-open/
  */
 public class StayOpenCheckBoxMenuItem extends JCheckBoxMenuItem {
 
