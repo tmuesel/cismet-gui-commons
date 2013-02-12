@@ -30,7 +30,7 @@ import javax.swing.JFrame;
 import de.cismet.tools.gui.StaticSwingTools;
 
 /**
- * DOCUMENT ME!
+ * Abstract Class, which provides structure for PasswordDialogs.
  *
  * @author   spuhl
  * @version  $Revision$, $Date$
@@ -61,7 +61,7 @@ public abstract class PasswordDialog extends LoginService {
     /**
      * Creates a new PasswordDialog object.
      *
-     * @param  url  DOCUMENT ME!
+     * @param  url  URL to Server
      */
     public PasswordDialog(final URL url) {
         super();
@@ -74,8 +74,8 @@ public abstract class PasswordDialog extends LoginService {
     /**
      * Creates a new PasswordDialog object.
      *
-     * @param  url              DOCUMENT ME!
-     * @param  parentComponent  DOCUMENT ME!
+     * @param  url              URL to Server
+     * @param  parentComponent  parent Component
      */
     public PasswordDialog(final URL url, final Component parentComponent) {
         this(url);
@@ -90,18 +90,18 @@ public abstract class PasswordDialog extends LoginService {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the Username
      *
-     * @return  DOCUMENT ME!
+     * @return  Username
      */
     public String getUserName() {
         return creds.getUserName();
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the Username Password Credentials
      *
-     * @param  creds  DOCUMENT ME!
+     * @param  creds  Credential
      */
     public void setUsernamePassword(final UsernamePasswordCredentials creds) {
         this.creds = creds;

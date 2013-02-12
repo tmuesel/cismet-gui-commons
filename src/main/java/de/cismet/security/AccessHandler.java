@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.HashMap;
 
 /**
- * DOCUMENT ME!
+ * Acceshandler Interface
  *
  * @author   spuhl
  * @version  $Revision$, $Date$
@@ -29,7 +29,7 @@ public interface AccessHandler {
     //~ Enums ------------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Acces Methods Enumaration
      *
      * @version  $Revision$, $Date$
      */
@@ -40,6 +40,7 @@ public interface AccessHandler {
         POST_REQUEST, GET_REQUEST, POST_REQUEST_NO_TUNNEL, GET_REQUEST_NO_TUNNEL
     }
     /**
+     * Acces Handler Types Enumaration
      * todo ein handler könnte mehr als einen Typ verarbeiten.
      *
      * @version  $Revision$, $Date$
@@ -54,30 +55,31 @@ public interface AccessHandler {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Checks whether the given Access_Method is supported or not
      *
-     * @param   method  DOCUMENT ME!
+     * @param   method  Access Method
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>True</code>, if it is supported; <code>false</code>, if not
      */
     boolean isAccessMethodSupported(ACCESS_METHODS method);
     /**
-     * DOCUMENT ME!
+     * Returns the Handler Type
      *
-     * @return  DOCUMENT ME!
+     * @return  Type
      */
     ACCESS_HANDLER_TYPES getHandlerType();
     /**
+     * Sends a Access Request to the given url.
      * todo idee default dorequest ohne accessMethod jeder handler entscheided selbst wie der default fall aussieht.
      *
-     * @param   url               DOCUMENT ME!
-     * @param   requestParameter  DOCUMENT ME!
+     * @param   url               The URL, where the Request is send to
+     * @param   requestParameter  The payload
      * @param   method            DOCUMENT ME!
-     * @param   options           DOCUMENT ME!
+     * @param   options           The options to add to the Request
      *
-     * @return  DOCUMENT ME!
+     * @return  The response
      *
-     * @throws  Exception  DOCUMENT ME!
+     * @throws  Exception  throws Exception, if Request failed.
      */
     InputStream doRequest(URL url,
             Reader requestParameter,
@@ -93,7 +95,7 @@ public interface AccessHandler {
      *
      * @return  The response.
      *
-     * @throws  Exception  DOCUMENT ME!
+     * @throws  Exception  throws Exception, if Request failed.
      */
     InputStream doRequest(URL url,
             InputStream requestParameter, HashMap<String, String> options) throws Exception;

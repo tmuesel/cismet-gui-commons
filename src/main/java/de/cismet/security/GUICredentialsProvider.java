@@ -47,7 +47,7 @@ import de.cismet.netutil.Proxy;
 import de.cismet.tools.gui.StaticSwingTools;
 
 /**
- * DOCUMENT ME!
+ * Provides Username-Password Credentials.
  *
  * @author   Sebastian
  * @version  $Revision$, $Date$
@@ -78,7 +78,7 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     /**
      * Creates a new GUICredentialsProvider object.
      *
-     * @param  url  DOCUMENT ME!
+     * @param  url  server URL
      */
     public GUICredentialsProvider(final URL url) {
         super();
@@ -91,8 +91,8 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     /**
      * Creates a new GUICredentialsProvider object.
      *
-     * @param  url              DOCUMENT ME!
-     * @param  parentComponent  DOCUMENT ME!
+     * @param  url              server URL
+     * @param  parentComponent  parent Component
      */
     public GUICredentialsProvider(final URL url, final Component parentComponent) {
         this(url);
@@ -109,32 +109,44 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the UserName
      *
-     * @return  DOCUMENT ME!
+     * @return  username
      */
     public String getUserName() {
         return creds.getUserName();
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the Username-Password Credentials
      *
-     * @return  DOCUMENT ME!
+     * @return  usernamePasswordCredentials
      */
     public UsernamePasswordCredentials getCredentials() {
         return creds;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the Username-Password Credentials
      *
-     * @param  creds  DOCUMENT ME!
+     * @param  creds  usernamePasswordCredentials
      */
     public void setUsernamePassword(final UsernamePasswordCredentials creds) {
         this.creds = creds;
     }
 
+    /**
+     * Request additional {@link org.apache.commons.httpclient.Credentials authentication credentials}
+     * 
+     * @param authscheme the {@link org.apache.commons.httpclient.auth.AuthScheme authentication scheme}
+     * @param host the authentication host
+     * @param port the port of the authentication ost
+     * @param proxy <code>true</code> if autheticationg with a proxy, <cod>false</code> otherwise
+     * 
+     * @return <code>authentication credentials</code>
+     * 
+     * @throws CredentialsNotAvailableException 
+     */
     @Override
     public Credentials getCredentials(
             final AuthScheme authscheme,
@@ -180,9 +192,10 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * DOCUMENT ME!
+     * Method that opens a LoginDialog. The Dialog shows the last authenticated username and it demands an possible Username-Password Credentials.
+     * 
      *
-     * @throws  CredentialsNotAvailableException  DOCUMENT ME!
+     * @throws  CredentialsNotAvailableException if the Authentication fails the Method throws a CredentialsNotAvaiableException.
      */
     private void requestUsernamePassword() throws CredentialsNotAvailableException {
         try {
@@ -246,6 +259,17 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
         }
     }
 
+    /**
+     * authenticate the given password and the given password. If the Authentication succeed the {@link #isAuthenticationDone} will set to true, otherwise not.
+     * 
+     * @param name username
+     * @param password password
+     * @param server server
+     * 
+     * @return <code>true</code>, if the authentication succeeded, otherwise <code>false</code>
+     * 
+     * @throws Exception
+     */
     @Override
     public boolean authenticate(final String name, final char[] password, final String server) throws Exception {
         if (log.isDebugEnabled()) {
@@ -274,20 +298,20 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the status of {@link #isAuthenticationCanceled}
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>true</code>, if the Authentication is canceled, otherwise <code>false<code>
      */
     public boolean isAuthenticationCanceled() {
         return isAuthenticationCanceled;
     }
 
     /**
-     * DOCUMENT ME!
+     * Tests the Connection to the server. Uses the given Username Password Credentials to get Access.
      *
-     * @param   creds  DOCUMENT ME!
+     * @param   creds  Username Password Credentials
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>true</code>, if the server Responses to the Request, otherwise <code>false</code>
      */
     public boolean testConnection(final UsernamePasswordCredentials creds) {
         final HttpClient client = new HttpClient();
@@ -344,9 +368,9 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the Title for the Server
      *
-     * @param  title  DOCUMENT ME!
+     * @param  title  Title
      */
     public void setTitle(final String title) {
         this.title = title;
