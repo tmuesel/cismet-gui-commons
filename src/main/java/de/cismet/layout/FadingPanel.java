@@ -51,14 +51,16 @@ public class FadingPanel extends Component {
     /**
      * Register a fadingpanel listener.
      *
-     * @param  listener  DOCUMENT ME!
+     * @param  listener  fadinfpanel listener
+     *
+     * @see    FadingPanelListener
      */
     public void addFadingPanelListener(final FadingPanelListener listener) {
         fadeListenerList.add(FadingPanelListener.class, listener);
     }
 
     /**
-     * informs the listener that the fade animation is finished.
+     * Informs the listener that the fade animation is finished.
      */
     private void fireFadeFinished() {
         for (final FadingPanelListener listener : fadeListenerList.getListeners(FadingPanelListener.class)) {
@@ -76,12 +78,12 @@ public class FadingPanel extends Component {
     }
 
     /**
-     * Fades from one component to an other, by first creating an image from both components. Then @see
-     * startFading(BufferedImage, BufferedImage, long)
+     * Fades from one component to an other, by first creating an image from both components. Then
+     * {@link #startFading(BufferedImage, BufferedImage, long)}
      *
-     * @param  fadeFromComponent  DOCUMENT ME!
-     * @param  fadeToComponent    DOCUMENT ME!
-     * @param  fadeDuration       DOCUMENT ME!
+     * @param  fadeFromComponent  Component to fade from
+     * @param  fadeToComponent    Component to fade to
+     * @param  fadeDuration       Duration in ms for the fade animation
      */
     public void startFading(final Component fadeFromComponent,
             final Component fadeToComponent,
@@ -96,9 +98,9 @@ public class FadingPanel extends Component {
      * Fades an image to an other, in a specific duration of time. If the Component is still fading, then the timer is
      * reseted. Else a new fade thread will be started.
      *
-     * @param  fadeFromImage  the image to fade from
-     * @param  fadeToImage    the image to fade to
-     * @param  fadeDuration   the duration in ms for the fade animation
+     * @param  fadeFromImage  Image to fade from
+     * @param  fadeToImage    Image to fade to
+     * @param  fadeDuration   Duration in ms for the fade animation
      */
     public void startFading(final BufferedImage fadeFromImage,
             final BufferedImage fadeToImage,
@@ -149,9 +151,9 @@ public class FadingPanel extends Component {
     }
 
     /**
-     * DOCUMENT ME!
+     * Updates the Component.
      *
-     * @param  graphics  DOCUMENT ME!
+     * @param  graphics  graphics
      */
     @Override
     public void update(final Graphics graphics) {
@@ -159,9 +161,11 @@ public class FadingPanel extends Component {
     }
 
     /**
-     * DOCUMENT ME!
+     * Paints the Component with Fading. Uses the {@link #ellapsedTime()} and the {@link #fadeDuration} to calculate the
+     * alpha values for Component to fade from and to fade to. As more time ellapses as higher the alpha value for the
+     * Component to fade to gets and as lower the alpha value for the Component to fade from gets.
      *
-     * @param  graphics  DOCUMENT ME!
+     * @param  graphics  graphics
      */
     @Override
     public synchronized void paint(final Graphics graphics) {

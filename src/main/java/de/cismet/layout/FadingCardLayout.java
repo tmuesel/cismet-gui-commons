@@ -74,10 +74,10 @@ public class FadingCardLayout extends CardLayout {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Adds the specified card with the name key to the Layout.
      *
-     * @param  name       DOCUMENT ME!
-     * @param  component  DOCUMENT ME!
+     * @param  name       Key
+     * @param  component  Value
      */
     @Override
     public void addLayoutComponent(final String name, final Component component) {
@@ -86,9 +86,9 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Removes all Mappings with the specified card.
      *
-     * @param  component  DOCUMENT ME!
+     * @param  component  value to be removed
      */
     @Override
     public void removeLayoutComponent(final Component component) {
@@ -103,9 +103,9 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Fades to the next card. If the next card is fadepanel, fades to the card after the next.
      *
-     * @param  parent  DOCUMENT ME!
+     * @param  parent  parent container
      */
     @Override
     public void next(final Container parent) {
@@ -124,9 +124,9 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Fades to the previous card. If the previous card is fadepanel, fades to the card before the previous.
      *
-     * @param  parent  DOCUMENT ME!
+     * @param  parent  parent container
      */
     @Override
     public void previous(final Container parent) {
@@ -145,9 +145,9 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Fades to the first card. If the first card is fadepanel, fades to the second card.
      *
-     * @param  parent  DOCUMENT ME!
+     * @param  parent  parent container
      */
     @Override
     public void first(final Container parent) {
@@ -162,9 +162,9 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Fades to the last card. If the last card is fadepanel, fades to the previous card before last.
      *
-     * @param  parent  DOCUMENT ME!
+     * @param  parent  parent container
      */
     @Override
     public void last(final Container parent) {
@@ -179,10 +179,10 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Fades to the given card within the parent container.
      *
-     * @param  parent  DOCUMENT ME!
-     * @param  name    DOCUMENT ME!
+     * @param  parent  parent container
+     * @param  name    the name of the card to show
      */
     @Override
     public void show(final Container parent, final String name) {
@@ -204,8 +204,8 @@ public class FadingCardLayout extends CardLayout {
     /**
      * Fades the actualy shown component to the given component. The fade panel is shown and his animation is started.
      *
-     * @param  parent  DOCUMENT ME!
-     * @param  fadeTo  DOCUMENT ME!
+     * @param  parent  parent container
+     * @param  fadeTo  Card to show
      */
     private void fade(final Container parent, final Component fadeTo) {
         // component holen von der aus gefadet werden soll
@@ -293,7 +293,7 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the duration of the fade animation in ms.
      *
      * @return  the duration of the fade animation in ms
      */
@@ -302,7 +302,7 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the duration of the fade animation in ms.
      *
      * @param  fadeDuration  the duration of the fade animation in ms
      */
