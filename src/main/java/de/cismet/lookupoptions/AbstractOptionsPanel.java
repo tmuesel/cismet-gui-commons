@@ -31,19 +31,19 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     //~ Constructors -----------------------------------------------------------
 
     /**
-     * constructor.
+     * Constructor with category set to CATEGRY_GENERAL.
      *
-     * @param  name  DOCUMENT ME!
+     * @param  name  name of the Option Panel
      */
     public AbstractOptionsPanel(final String name) {
         this(name, DefaultOptionsCategory.class);
     }
 
     /**
-     * constructor if the category is null, then it is set to CATEGORY_GENERAL.
+     * Constructor. If the category is null, then it is set to CATEGORY_GENERAL.
      *
-     * @param  name           DOCUMENT ME!
-     * @param  categoryClass  DOCUMENT ME!
+     * @param  name           name of the Option Panel
+     * @param  categoryClass  category
      */
     public AbstractOptionsPanel(final String name, final Class<? extends AbstractOptionsCategory> categoryClass) {
         if (name == null) {
@@ -57,9 +57,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the category of this options panel
      *
-     * @return  the category of the lookup panel
+     * @return  category
      */
     @Override
     public Class<? extends OptionsCategory> getCategoryClass() {
@@ -67,9 +67,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the name of the lookup panel
      *
-     * @return  the name of the lookup panel
+     * @return  name
      */
     @Override
     public String getName() {
@@ -77,9 +77,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the order-value of this options panel. Returns {@link Integer#MAX_VALUE} by Default.
      *
-     * @return  Integer.MAX_Value by default
+     * @return  order
      */
     @Override
     public int getOrder() {
@@ -87,9 +87,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the tooltip for this options panel. Returns <code>null</code> by Default.
      *
-     * @return  no tooltip by default
+     * @return  tooltip text
      */
     @Override
     public String getTooltip() {
@@ -97,9 +97,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the help page (string containing html) for this options panel. Returns <code>null</code> by Default.
      *
-     * @return  no help by default
+     * @return  help page
      */
     @Override
     public String getHelp() {
@@ -107,9 +107,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the panel
      *
-     * @return  the panel
+     * @return  panel
      */
     @Override
     public JPanel getPanel() {
@@ -117,11 +117,11 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * DOCUMENT ME!
+     * Compares the specified Panel with this Panel. Returns negative or postive values, if the Panels' order are not equal or zero, if the order and the name are equal.
      *
-     * @param   o  DOCUMENT ME!
+     * @param   o  Panel to be compared with
      *
-     * @return  DOCUMENT ME!
+     * @return  zero, if equal; negative Integer, if it is smaller; postive Integer, if bigger.
      */
     @Override
     public int compareTo(final OptionsPanelController o) {
@@ -133,33 +133,60 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
         }
     }
 
+    /**
+     * Should return true if some option value has been changed. Unchanged by default.
+     * 
+     * @return false by default
+     */
     @Override
     public boolean isChanged() {
         return false;
     }
 
+    /**
+     * This method is called when Options Dialog "Cancel" button is pressed. Invokes {@link #update()} by default.
+     */
     @Override
     public void cancel() {
         update();
     }
 
+    /**
+     * This method is called when Options Dialog "OK" button is pressed.
+     */
     @Override
     public void applyChanges() {
     }
 
+    /**
+     * Component should load its data here.
+     */
     @Override
     public void update() {
     }
 
+    /**
+     * 
+     * @param parent 
+     */
     @Override
     public void configure(final Element parent) {
     }
 
+    /**
+     * 
+     * @return null by default
+     * @throws NoWriteError 
+     */
     @Override
     public Element getConfiguration() throws NoWriteError {
         return null;
     }
 
+    /**
+     * 
+     * @param parent 
+     */
     @Override
     public void masterConfigure(final Element parent) {
     }

@@ -22,44 +22,44 @@ public interface OptionsPanelController extends Comparable<OptionsPanelControlle
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the category of this options panel
      *
-     * @return  the category of this options panel
+     * @return  category
      */
     Class<? extends OptionsCategory> getCategoryClass();
 
     /**
-     * DOCUMENT ME!
+     * Returns the name of this options panel
      *
-     * @return  the name of this options panel
+     * @return  name
      */
     String getName();
 
     /**
-     * DOCUMENT ME!
+     * Returns the order-value of this options panel
      *
-     * @return  the order-value of this options panel
+     * @return  order-value
      */
     int getOrder();
 
     /**
-     * DOCUMENT ME!
+     * Returns the tooltip for this options panel
      *
-     * @return  the tooltip for this options panel
+     * @return  tooltip
      */
     String getTooltip();
 
     /**
-     * DOCUMENT ME!
+     * Returns the help page (string containing html) for this options panel.
      *
-     * @return  the help page (string containing html) for this options panel
+     * @return  help page
      */
     String getHelp();
 
     /**
-     * DOCUMENT ME!
+     * Returns the panel representing this Options
      *
-     * @return  the panel representing this Options
+     * @return  panel
      */
     JPanel getPanel();
 

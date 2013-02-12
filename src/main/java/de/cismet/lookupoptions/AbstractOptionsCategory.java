@@ -20,14 +20,29 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Returns 32x32 icon used in list on the top of Options Dialog. Returns <code>null</code> by Default.
+     * 
+     * @return 32x32 icon
+     */
     @Override
     public Icon getIcon() {
         return null;
     }
 
+    /**
+     * Returns name of category used in list on the top side of Options Dialog.
+     * 
+     * @return name of category
+     */
     @Override
     public abstract String getName();
 
+    /**
+     * Returns the relative order of category in the Options Dialog. Returns {@link Integer#MAX_VALUE} by Default.
+     * 
+     * @return relative order
+     */
     @Override
     public int getOrder() {
         return Integer.MAX_VALUE;
@@ -51,7 +66,9 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     }
 
     /**
-     * {@inheritDoc}
+     * Returns text for tooltip describing the category. Returns <code>null</code> by Default.
+     * 
+     * @return tooltip text
      */
     @Override
     public String getTooltip() {
