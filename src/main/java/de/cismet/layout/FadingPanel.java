@@ -95,7 +95,7 @@ public class FadingPanel extends Component {
     }
 
     /**
-     * Fades an image to an other, in a specific duration of time. If the Component is still fading, then the timer is
+     * Fades an image to an other, in a specific duration of time. If the component is still fading, then the timer is
      * reseted. Else a new fade thread will be started.
      *
      * @param  fadeFromImage  Image to fade from
@@ -161,9 +161,9 @@ public class FadingPanel extends Component {
     }
 
     /**
-     * Paints the Component with Fading. Uses the {@link #ellapsedTime()} and the {@link #fadeDuration} to calculate the
-     * alpha values for Component to fade from and to fade to. As more time ellapses as higher the alpha value for the
-     * Component to fade to gets and as lower the alpha value for the Component to fade from gets.
+     * Paints the component with fading. Uses the {@link #ellapsedTime()} and the {@link #fadeDuration} to calculate the
+     * alpha values for component to fade from and to fade to. As more time ellapses as higher the alpha value for the
+     * component to fade to gets and as lower the alpha value for the component to fade from gets.
      *
      * @param  graphics  graphics
      */

@@ -17,8 +17,8 @@ import java.util.Hashtable;
 import javax.swing.SwingUtilities;
 
 /**
- * A CardLayout extensions, which animates the change from one card to another card with a fade animation (by using the
- * FadingPanel component).
+ * A {@link java.awt.CardLayout} extensions, which animates the change from one card to another card with a fade
+ * animation (by using the {@link de.cismet.layout.FadingPanel} component).
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -74,7 +74,7 @@ public class FadingCardLayout extends CardLayout {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Adds the specified card with the name key to the Layout.
+     * Adds the specified card with the name key to the layout.
      *
      * @param  name       Key
      * @param  component  Value
@@ -86,7 +86,7 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Removes all Mappings with the specified card.
+     * Removes all mappings with the specified card.
      *
      * @param  component  value to be removed
      */
@@ -103,7 +103,7 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the next card. If the next card is fadepanel, fades to the card after the next.
+     * Fades to the next card. If the next card is {@link de.cismet.layout.FadePanel}, fades to the card after the next.
      *
      * @param  parent  parent container
      */
@@ -124,7 +124,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the previous card. If the previous card is fadepanel, fades to the card before the previous.
+     * Fades to the previous card. If the previous card is {@link de.cismet.layout.FadePanel}, fades to the card before
+     * the previous.
      *
      * @param  parent  parent container
      */
@@ -145,7 +146,7 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the first card. If the first card is fadepanel, fades to the second card.
+     * Fades to the first card. If the first card is {@link de.cismet.layout.FadePanel}, fades to the second card.
      *
      * @param  parent  parent container
      */
@@ -162,7 +163,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the last card. If the last card is fadepanel, fades to the previous card before last.
+     * Fades to the last card. If the last card is {@link de.cismet.layout.FadePanel}, fades to the previous card before
+     * last.
      *
      * @param  parent  parent container
      */
@@ -202,7 +204,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades the actualy shown component to the given component. The fade panel is shown and his animation is started.
+     * Fades the actualy shown component to the given component. The {@link de.cismet.layout.FadePanel} is shown and his
+     * animation is started.
      *
      * @param  parent  parent container
      * @param  fadeTo  Card to show
@@ -248,7 +251,7 @@ public class FadingCardLayout extends CardLayout {
 
     /**
      * Returns the index of the first visible component within the given container. If the containers layout is a
-     * cardlayout, then it will be the index of the currently shown component.
+     * {@link java.awt.CardLayout}, then it will be the index of the currently shown component.
      *
      * @param   parent  the container
      *
