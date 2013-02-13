@@ -17,7 +17,7 @@ import de.cismet.tools.configuration.NoWriteError;
 
 /**
  * The base-class for Options Panels. This class provides a skeletal implementation of the
- * {@link de.cismet.lookupoptions.OptionspanelController} interface to minimize the effort required to implement this
+ * {@link de.cismet.lookupoptions.OptionsPanelController} interface to minimize the effort required to implement this
  * interface.
  *
  * @author   jruiz

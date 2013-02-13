@@ -103,7 +103,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the next card. If the next card is {@link de.cismet.layout.FadePanel}, fades to the card after the next.
+     * Fades to the next card. If the next card is {@link de.cismet.layout.FadingPanel FadePanel}, fades to the card
+     * after the next.
      *
      * @param  parent  parent container
      */
@@ -124,8 +125,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the previous card. If the previous card is {@link de.cismet.layout.FadePanel}, fades to the card before
-     * the previous.
+     * Fades to the previous card. If the previous card is {@link de.cismet.layout.FadingPanel FadePanel}, fades to the
+     * card before the previous.
      *
      * @param  parent  parent container
      */
@@ -146,7 +147,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the first card. If the first card is {@link de.cismet.layout.FadePanel}, fades to the second card.
+     * Fades to the first card. If the first card is {@link de.cismet.layout.FadingPanel FadePanel}, fades to the second
+     * card.
      *
      * @param  parent  parent container
      */
@@ -163,8 +165,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades to the last card. If the last card is {@link de.cismet.layout.FadePanel}, fades to the previous card before
-     * last.
+     * Fades to the last card. If the last card is {@link de.cismet.layout.FadingPanel FadePanel}, fades to the previous
+     * card before last.
      *
      * @param  parent  parent container
      */
@@ -204,8 +206,8 @@ public class FadingCardLayout extends CardLayout {
     }
 
     /**
-     * Fades the actualy shown component to the given component. The {@link de.cismet.layout.FadePanel} is shown and his
-     * animation is started.
+     * Fades the actualy shown component to the given component. The {@link de.cismet.layout.FadingPanel FadePanel} is
+     * shown and his animation is started.
      *
      * @param  parent  parent container
      * @param  fadeTo  Card to show
