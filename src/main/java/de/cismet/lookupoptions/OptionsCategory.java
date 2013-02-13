@@ -10,7 +10,7 @@ package de.cismet.lookupoptions;
 import javax.swing.Icon;
 
 /**
- * This class represents one category in Options Dialog.
+ * This class represents one category in the {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -20,28 +20,29 @@ public interface OptionsCategory extends Comparable<OptionsCategory> {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog.
+     * Returns 32x32 icon used in list on the top of the {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
      *
      * @return  32x32 icon
      */
     Icon getIcon();
 
     /**
-     * Returns name of category used in list on the top side of Options Dialog.
+     * Returns Name of category used in list on the top side of the
+     * {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
      *
-     * @return  name of category
+     * @return  Name of category
      */
     String getName();
 
     /**
-     * Returns the relative order of category in the Options Dialog.
+     * Returns the relative order of category in the the {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
      *
      * @return  relative order
      */
     int getOrder();
 
     /**
-     * Returns text for tooltip describing the category.
+     * Returns text for the tooltip describing the category.
      *
      * @return  tooltip text
      */

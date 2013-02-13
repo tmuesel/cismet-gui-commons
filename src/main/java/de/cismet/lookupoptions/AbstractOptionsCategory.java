@@ -10,8 +10,8 @@ package de.cismet.lookupoptions;
 import javax.swing.Icon;
 
 /**
- * This class provides a skeletal implementation of the OptionsCategory interface to minimize the effort required to
- * implement this interface.
+ * This class provides a skeletal implementation of the {@link de.cismet.lookupoptions.OptionsCategory} interface to
+ * minimize the effort required to implement this interface.
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -21,9 +21,9 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog. Returns <code>null</code> by Default.
-     * 
-     * @return 32x32 icon
+     * Returns 32x32 icon used in list on the top of Options Dialog. Returns <code>null</code> by default.
+     *
+     * @return  32x32 icon
      */
     @Override
     public Icon getIcon() {
@@ -32,16 +32,16 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
 
     /**
      * Returns name of category used in list on the top side of Options Dialog.
-     * 
-     * @return name of category
+     *
+     * @return  name of category
      */
     @Override
     public abstract String getName();
 
     /**
-     * Returns the relative order of category in the Options Dialog. Returns {@link Integer#MAX_VALUE} by Default.
-     * 
-     * @return relative order
+     * Returns the relative order of category in the Options Dialog. Returns {@link Integer#MAX_VALUE} by default.
+     *
+     * @return  relative order
      */
     @Override
     public int getOrder() {
@@ -49,11 +49,13 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     }
 
     /**
-     * DOCUMENT ME!
+     * Compares the given {@link de.cismet.lookupoptions.OptionsCategory} with this <code>OptionCategory</code>. First
+     * compares the <code>order</code> values of the <code>OptionCategories</code>. If they are equal compares the
+     * <code>name</code> values.
      *
-     * @param   o  DOCUMENT ME!
+     * @param   o  <code>OptionCategory</code> to compare to
      *
-     * @return  DOCUMENT ME!
+     * @return  Zero, if they are equal. Otherwise negative or positive values.
      */
     @Override
     public int compareTo(final OptionsCategory o) {
@@ -66,9 +68,9 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     }
 
     /**
-     * Returns text for tooltip describing the category. Returns <code>null</code> by Default.
-     * 
-     * @return tooltip text
+     * Returns text for tooltip describing the category. Returns <code>null</code> by default.
+     *
+     * @return  tooltip text
      */
     @Override
     public String getTooltip() {

@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import de.cismet.tools.configuration.Configurable;
 
 /**
- * This class represents one panel in Options Dialog.
+ * This class represents one panel in the {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -22,28 +22,28 @@ public interface OptionsPanelController extends Comparable<OptionsPanelControlle
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the category of this options panel
+     * Returns the category of this options panel.
      *
      * @return  category
      */
     Class<? extends OptionsCategory> getCategoryClass();
 
     /**
-     * Returns the name of this options panel
+     * Returns the name of this options panel.
      *
      * @return  name
      */
     String getName();
 
     /**
-     * Returns the order-value of this options panel
+     * Returns the order-value of this options panel.
      *
      * @return  order-value
      */
     int getOrder();
 
     /**
-     * Returns the tooltip for this options panel
+     * Returns the tooltip for this options panel.
      *
      * @return  tooltip
      */
@@ -57,7 +57,7 @@ public interface OptionsPanelController extends Comparable<OptionsPanelControlle
     String getHelp();
 
     /**
-     * Returns the panel representing this Options
+     * Returns the panel representing this Options.
      *
      * @return  panel
      */

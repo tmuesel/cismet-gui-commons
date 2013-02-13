@@ -16,7 +16,9 @@ import de.cismet.lookupoptions.options.DefaultOptionsCategory;
 import de.cismet.tools.configuration.NoWriteError;
 
 /**
- * The base-class for Options Panels.
+ * The base-class for Options Panels. This class provides a skeletal implementation of the
+ * {@link de.cismet.lookupoptions.OptionspanelController} interface to minimize the effort required to implement this
+ * interface.
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -31,7 +33,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     //~ Constructors -----------------------------------------------------------
 
     /**
-     * Constructor with category set to CATEGRY_GENERAL.
+     * Constructor with category set to {@link de.cismet.lookupoptions.options.DefaultOptionsCategory}.
      *
      * @param  name  name of the Option Panel
      */
@@ -40,7 +42,8 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Constructor. If the category is null, then it is set to CATEGORY_GENERAL.
+     * Constructor. If the category is null, then it is set to
+     * {@link de.cismet.lookupoptions.options.DefaultOptionsCategory}.
      *
      * @param  name           name of the Option Panel
      * @param  categoryClass  category
@@ -57,7 +60,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the category of this options panel
+     * Returns the category of this options panel.
      *
      * @return  category
      */
@@ -67,7 +70,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Returns the name of the lookup panel
+     * Returns the name of the lookup panel.
      *
      * @return  name
      */
@@ -107,7 +110,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Returns the panel
+     * Returns this panel.
      *
      * @return  panel
      */
@@ -117,11 +120,12 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Compares the specified Panel with this Panel. Returns negative or postive values, if the Panels' order are not equal or zero, if the order and the name are equal.
+     * Compares the specified {@link de.cismet.lookupoptions.OptionsPanelController Panel} with this <code>Panel</code>.
+     * Compares the <code>order</code> values. If they are equal compares the <code>name</code> values.
      *
      * @param   o  Panel to be compared with
      *
-     * @return  zero, if equal; negative Integer, if it is smaller; postive Integer, if bigger.
+     * @return  Zero, if equal; Otherwise negative or positive values.
      */
     @Override
     public int compareTo(final OptionsPanelController o) {
@@ -134,9 +138,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Should return true if some option value has been changed. Unchanged by default.
-     * 
-     * @return false by default
+     * Should return true if any option value has been changed. <code>False</code> by default.
+     *
+     * @return  <code>True</code>, if any option value has been changed
      */
     @Override
     public boolean isChanged() {
@@ -166,17 +170,20 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * 
-     * @param parent 
+     * DOCUMENT ME!
+     *
+     * @param  parent  DOCUMENT ME!
      */
     @Override
     public void configure(final Element parent) {
     }
 
     /**
-     * 
-     * @return null by default
-     * @throws NoWriteError 
+     * DOCUMENT ME!
+     *
+     * @return  null by default
+     *
+     * @throws  NoWriteError  DOCUMENT ME!
      */
     @Override
     public Element getConfiguration() throws NoWriteError {
@@ -184,8 +191,9 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * 
-     * @param parent 
+     * DOCUMENT ME!
+     *
+     * @param  parent  DOCUMENT ME!
      */
     @Override
     public void masterConfigure(final Element parent) {
