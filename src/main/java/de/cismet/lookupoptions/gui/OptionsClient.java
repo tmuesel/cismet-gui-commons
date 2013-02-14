@@ -61,7 +61,7 @@ public class OptionsClient implements Configurable {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the Instance
+     * Returns the Instance.
      *
      * @return  instance
      */
@@ -131,7 +131,7 @@ public class OptionsClient implements Configurable {
     }
 
     /**
-     * Returns the option category specified by the the given category Class
+     * Returns the option category specified by the the given category Class.
      *
      * @param   categoryClass  category Class
      *

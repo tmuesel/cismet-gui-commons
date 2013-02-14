@@ -60,7 +60,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the category of this options panel.
+     * Returns the category of the lookup panel.
      *
      * @return  category
      */
@@ -80,7 +80,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Returns the order-value of this options panel. Returns {@link Integer#MAX_VALUE} by Default.
+     * Returns the order-value of the lookup panel. Returns {@link Integer#MAX_VALUE} by Default.
      *
      * @return  order
      */
@@ -90,7 +90,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Returns the tooltip for this options panel. Returns <code>null</code> by Default.
+     * Returns the tooltip for the lookup panel. Returns <code>null</code> by Default.
      *
      * @return  tooltip text
      */
@@ -100,7 +100,7 @@ public abstract class AbstractOptionsPanel extends JPanel implements OptionsPane
     }
 
     /**
-     * Returns the help page (string containing html) for this options panel. Returns <code>null</code> by Default.
+     * Returns the help page (string containing html) for the lookup panel. Returns <code>null</code> by Default.
      *
      * @return  help page
      */

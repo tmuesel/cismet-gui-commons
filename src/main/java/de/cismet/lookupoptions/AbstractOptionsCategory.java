@@ -21,7 +21,8 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog. Returns <code>null</code> by default.
+     * Returns 32x32 icon used in list on the top of {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
+     * Returns <code>null</code> by default.
      *
      * @return  32x32 icon
      */
@@ -31,7 +32,8 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     }
 
     /**
-     * Returns name of category used in list on the top side of Options Dialog.
+     * Returns name of category used in list on the top side of the
+     * {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
      *
      * @return  name of category
      */
@@ -39,7 +41,8 @@ public abstract class AbstractOptionsCategory implements OptionsCategory {
     public abstract String getName();
 
     /**
-     * Returns the relative order of category in the Options Dialog. Returns {@link Integer#MAX_VALUE} by default.
+     * Returns the relative order of category in the {@link de.cismet.lookupoptions.gui.OptionsDialog OptionsDialog}.
+     * Returns {@link Integer#MAX_VALUE} by default.
      *
      * @return  relative order
      */

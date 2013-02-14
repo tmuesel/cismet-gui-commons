@@ -19,7 +19,7 @@ import de.cismet.lookupoptions.AbstractOptionsCategory;
 import de.cismet.lookupoptions.OptionsCategory;
 
 /**
- * This Class represents the Cismet Developer Category in the options Dialog
+ * This Class represents the Cismet Developer Category in the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -30,9 +30,10 @@ public class CismetDeveloperCategory extends AbstractOptionsCategory {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns name of category used in list on the top side of Options Dialog.
-     * 
-     * @return "Developer Tools"
+     * Returns name of this category used in the list on the top side of the
+     * {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  name
      */
     @Override
     public String getName() {
@@ -40,9 +41,9 @@ public class CismetDeveloperCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog.
-     * 
-     * @return 32x32 Icon
+     * Returns the 32x32 icon used in the list on the top of the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  32x32 Icon
      */
     @Override
     public Icon getIcon() {
@@ -55,9 +56,9 @@ public class CismetDeveloperCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns the relative order of category in the Options Dialog.
-     * 
-     * @return "99"
+     * Returns the relative order of this category in the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  "99"
      */
     @Override
     public int getOrder() {
@@ -65,9 +66,9 @@ public class CismetDeveloperCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns text for tooltip describing the category.
-     * 
-     * @return "Developer Tools"
+     * Returns the text for the tooltip describing this category.
+     *
+     * @return  tootip text
      */
     @Override
     public String getTooltip() {

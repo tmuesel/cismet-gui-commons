@@ -30,9 +30,10 @@ public class NetworkOptionsCategory extends AbstractOptionsCategory {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns name of category used in list on the top side of Options Dialog.
-     * 
-     * @return name
+     * Returns the name of this category used in the list on the top side of the
+     * {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  name
      */
     @Override
     public String getName() {
@@ -40,9 +41,9 @@ public class NetworkOptionsCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog.
-     * 
-     * @return 32x32 Icon
+     * Returns a 32x32 icon used in the list on the top of the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  32x32 Icon
      */
     @Override
     public Icon getIcon() {
@@ -55,9 +56,9 @@ public class NetworkOptionsCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns the relative order of category in the Options Dialog.
-     * 
-     * @return "1"
+     * Returns the relative order of this category in the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  "1"
      */
     @Override
     public int getOrder() {
@@ -65,9 +66,9 @@ public class NetworkOptionsCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns text for tooltip describing the category.
-     * 
-     * @return toolstip text
+     * Returns the text for the tooltip describing this category.
+     *
+     * @return  toolstip text
      */
     @Override
     public String getTooltip() {

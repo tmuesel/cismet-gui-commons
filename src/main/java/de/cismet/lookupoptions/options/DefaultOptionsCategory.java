@@ -18,7 +18,8 @@ import javax.swing.ImageIcon;
 import de.cismet.lookupoptions.*;
 
 /**
- * Represents the default category which is used in Options Dialog when no category is assigned to an option panel.
+ * Represents the default category which is used in {@link de.cismet.lookupoptions.gui.OptionsDialog} when no category
+ * is assigned to the option panel.
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -29,9 +30,10 @@ public class DefaultOptionsCategory extends AbstractOptionsCategory {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns name of category used in list on the top side of Options Dialog.
-     * 
-     * @return name
+     * Returns the name of this category used in the list on the top side of the
+     * {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  name
      */
     @Override
     public String getName() {
@@ -39,9 +41,9 @@ public class DefaultOptionsCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog.
-     * 
-     * @return 32x32 Icon
+     * Returns the 32x32 icon used in list on the top of {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  32x32 Icon
      */
     @Override
     public Icon getIcon() {
@@ -54,9 +56,9 @@ public class DefaultOptionsCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns text for tooltip describing the category.
-     * 
-     * @return toolstip text
+     * Returns the text for the tooltip describing this category.
+     *
+     * @return  toolstip text
      */
     @Override
     public String getTooltip() {

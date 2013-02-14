@@ -18,7 +18,7 @@ import javax.swing.ImageIcon;
 import de.cismet.lookupoptions.*;
 
 /**
- * Represents the general category in Options Dialog.
+ * Represents the general category in the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
  *
  * @author   jruiz
  * @version  $Revision$, $Date$
@@ -27,21 +27,22 @@ import de.cismet.lookupoptions.*;
 public class GeneralOptionsCategory extends AbstractOptionsCategory {
 
     //~ Methods ----------------------------------------------------------------
-    
+
     /**
-     * Returns name of category used in list on the top side of Options Dialog.
-     * 
-     * @return name
+     * Returns the name of this category used in list on the top side of the
+     * {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  name
      */
     @Override
     public String getName() {
         return org.openide.util.NbBundle.getMessage(GeneralOptionsCategory.class, "GeneralOptionsCategory.name"); // NOI18N
     }
-    
+
     /**
-     * Returns 32x32 icon used in list on the top of Options Dialog.
-     * 
-     * @return 32x32 Icon
+     * Returns a 32x32 icon used in the list on the top of the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  32x32 Icon
      */
     @Override
     public Icon getIcon() {
@@ -52,11 +53,11 @@ public class GeneralOptionsCategory extends AbstractOptionsCategory {
             return null;
         }
     }
-    
+
     /**
-     * Returns the relative order of category in the Options Dialog.
-     * 
-     * @return "0"
+     * Returns the relative order of this category in the {@link de.cismet.lookupoptions.gui.OptionsDialog}.
+     *
+     * @return  "0"
      */
     @Override
     public int getOrder() {
@@ -64,9 +65,9 @@ public class GeneralOptionsCategory extends AbstractOptionsCategory {
     }
 
     /**
-     * Returns text for tooltip describing the category.
-     * 
-     * @return toolstip text
+     * Returns the text for the tooltip describing this category.
+     *
+     * @return  tooltip text
      */
     @Override
     public String getTooltip() {
