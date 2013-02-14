@@ -28,7 +28,7 @@ import java.util.Collection;
 import javax.swing.Action;
 
 /**
- * DOCUMENT ME!
+ * Actions provider interface.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -38,9 +38,9 @@ public interface ActionsProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns a Collection of valid Actions.
      *
-     * @return  DOCUMENT ME!
+     * @return  Actions
      */
     Collection<? extends Action> getActions();
 }

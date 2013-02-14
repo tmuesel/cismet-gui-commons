@@ -25,7 +25,7 @@ import javax.swing.Icon;
 import javax.swing.JComponent;
 
 /**
- * DOCUMENT ME!
+ * Interface which provides the Structure for BasicGuiCompontents.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -35,7 +35,7 @@ public interface BasicGuiComponentProvider {
     //~ Enums ------------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Enumeration for the various GUI types.
      *
      * @version  $Revision$, $Date$
      */
@@ -49,51 +49,51 @@ public interface BasicGuiComponentProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the ID of the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  ID
      */
     String getId();
 
     /**
-     * DOCUMENT ME!
+     * Returns the name of the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  name
      */
     String getName();
 
     /**
-     * DOCUMENT ME!
+     * Returns the description for the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  description
      */
     String getDescription();
 
     /**
-     * DOCUMENT ME!
+     * Returns the icon for the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  icon
      */
     Icon getIcon();
 
     /**
-     * DOCUMENT ME!
+     * Returns the instance of the the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  instance
      */
     JComponent getComponent();
 
     /**
-     * DOCUMENT ME!
+     * Returns the type of the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  type
      */
     GuiType getType();
 
     /**
-     * DOCUMENT ME!
+     * Returns the position hint for the component.
      *
-     * @return  DOCUMENT ME!
+     * @return  position hint
      */
     Object getPositionHint();
 

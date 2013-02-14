@@ -23,7 +23,8 @@ import javax.swing.table.TableCellEditor;
 import de.cismet.tools.gui.treetable.AbstractCellEditor;
 
 /**
- * A table cell editor allowing to edit a color values.
+ * A table cell editor allowing to edit color values. This class includes the {@link javax.swing.JButton Edit button} as
+ * well as the {@link javax.swing.JDialog dialog box} the button opens.
  *
  * @author   jweintraut
  * @version  $Revision$, $Date$
@@ -66,6 +67,13 @@ public class ColorEditor extends AbstractCellEditor implements TableCellEditor, 
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Action preformance for the Edit Button and OK button. If the user clicks on the Edit button the
+     * {@link javax.swing.JColorChooser color chooser dialog} opens and the color value is loaded in the color chooser
+     * dialog. If the user clicks on the OK button the color value of the color chooser will be saved.
+     *
+     * @param  e  Action command
+     */
     @Override
     public void actionPerformed(final ActionEvent e) {
         if (EDIT.equals(e.getActionCommand())) {
@@ -81,13 +89,30 @@ public class ColorEditor extends AbstractCellEditor implements TableCellEditor, 
         }
     }
 
-    // Implement the one CellEditor method that AbstractCellEditor doesn't.
+    /**
+     * Returns the color contained in the editor.
+     *
+     * @return  color contained in the editor
+     */
     @Override
     public Object getCellEditorValue() {
         return color;
     }
 
-    // Implement the one method defined by TableCellEditor.
+    /**
+     * Sets the initial value for the editor.
+     *
+     * <p>Return the component that should be added to the client's Component hierarchy. Once installed in the client's
+     * hierarchy this component will the be able to draw and receive user input.</p>
+     *
+     * @param   table       null
+     * @param   value       the colorvalue of the cell to be edited.
+     * @param   isSelected  null
+     * @param   row         null
+     * @param   column      null
+     *
+     * @return  button for editing
+     */
     @Override
     public Component getTableCellEditorComponent(final JTable table,
             final Object value,

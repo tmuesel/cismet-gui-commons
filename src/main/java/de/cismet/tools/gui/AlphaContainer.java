@@ -39,7 +39,7 @@ public class AlphaContainer extends JComponent {
     /**
      * Creates a new AlphaContainer object.
      *
-     * @param  component  DOCUMENT ME!
+     * @param  component  component
      */
     public AlphaContainer(final JComponent component) {
         this.component = component;
@@ -54,7 +54,7 @@ public class AlphaContainer extends JComponent {
     /**
      * Paint the background using the background Color of the contained component.
      *
-     * @param  g  DOCUMENT ME!
+     * @param  g  graphics
      */
     @Override
     public void paintComponent(final Graphics g) {

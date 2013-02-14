@@ -69,7 +69,7 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
     /**
      * Creates a new CheckThreadViolationRepaintManager object.
      *
-     * @param  completeCheck  DOCUMENT ME!
+     * @param  completeCheck  indicates whether the complete check should be passed or not.
      */
     public CheckThreadViolationRepaintManager(final boolean completeCheck) {
         this.completeCheck = completeCheck;
@@ -78,29 +78,46 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Checks whether the complete check should be passed or not.
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>True</code>, if the complete check should be passed, otherwise return <code>false</code>.
      */
     public boolean isCompleteCheck() {
         return completeCheck;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets {@link #completeCheck} to the given status.
      *
-     * @param  completeCheck  DOCUMENT ME!
+     * @param  completeCheck  status
      */
     public void setCompleteCheck(final boolean completeCheck) {
         this.completeCheck = completeCheck;
     }
 
+    /**
+     * Mark the component as in need of layout and queue a runnable for the event dispatching thread that will validate
+     * the components first {@link JComponent#isValidateRoot()} ancestor.
+     *
+     * @param  component  Component to add to the list of invalid components.
+     */
     @Override
     public synchronized void addInvalidComponent(final JComponent component) {
         checkThreadViolations(component);
         super.addInvalidComponent(component);
     }
 
+    /**
+     * Adds a compontent in the list of components that should be refreshed. If c already has a dirty region, the
+     * rectangle (x,y,w,h) will be unioned with the region that should be redrawn. Before adding the compontent, the
+     * method {@link #checkThreadViolations(javax.swing.JComponent) checks thread violations}.
+     *
+     * @param  component  Component to repaint, null results in nothing happening.
+     * @param  x          coordinate of the region to repaint
+     * @param  y          Y coordinate of the region to repaint
+     * @param  w          Width of the region to repaint
+     * @param  h          Height of the region to repaint
+     */
     @Override
     public void addDirtyRegion(final JComponent component, final int x, final int y, final int w, final int h) {
         checkThreadViolations(component);
@@ -108,9 +125,11 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
     }
 
     /**
-     * DOCUMENT ME!
+     * Checks whether the repaint is done within the Event Dispatch Thread, or not.
      *
-     * @param  c  DOCUMENT ME!
+     * @param  c  component to be checked
+     *
+     * @see    #violationFound(javax.swing.JComponent, java.lang.StackTraceElement[])
      */
     private void checkThreadViolations(final JComponent c) {
         if (!SwingUtilities.isEventDispatchThread() && (completeCheck || c.isShowing())) {
@@ -149,10 +168,11 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
     }
 
     /**
-     * DOCUMENT ME!
+     * If an Event Dispatch Thread Violation was found with {@link #checkThreadViolations(javax.swing.JComponent)}, logs
+     * a fatal error to the logger.
      *
-     * @param  c           DOCUMENT ME!
-     * @param  stackTrace  DOCUMENT ME!
+     * @param  c           Component, where the Event Dispatch Thread Violation was found
+     * @param  stackTrace  Stacktrace to the Error[s]
      */
     protected void violationFound(final JComponent c, final StackTraceElement[] stackTrace) {
 //        System.out.println();
@@ -174,11 +194,13 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
     }
 
     /**
-     * DOCUMENT ME!
+     * main method for tests. Logger should get fatal message and stack trace while trying to invoke {#link #test()} the
+     * second time.
      *
-     * @param   args  DOCUMENT ME!
+     * @param   args  command argument line
      *
-     * @throws  Exception  DOCUMENT ME!
+     * @throws  Exception  throws Exception, if
+     *                     {@link javax.swing.SwingUtilities#invokeAndWait(java.lang.Runnable) invoke and wait} fails.
      */
     public static void main(final String[] args) throws Exception {
         // set CheckThreadViolationRepaintManager
@@ -204,7 +226,7 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
     }
 
     /**
-     * DOCUMENT ME!
+     * Test method.
      */
     static void test() {
         final JFrame frame = new JFrame("Am I on EDT?"); // NOI18N
@@ -229,7 +251,7 @@ public class CheckThreadViolationRepaintManager extends RepaintManager {
         frame.setVisible(true);
     }
     /**
-     * DOCUMENT ME!
+     * Test repaint method.
      */
     static void repaintTest() {
         try {

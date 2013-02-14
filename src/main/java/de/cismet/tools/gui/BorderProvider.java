@@ -14,7 +14,7 @@ package de.cismet.tools.gui;
 import javax.swing.border.Border;
 
 /**
- * DOCUMENT ME!
+ * Interface which provides the basic structure for borders.
  *
  * @author   srichter
  * @version  $Revision$, $Date$
@@ -24,21 +24,21 @@ public interface BorderProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the title border.
      *
-     * @return  DOCUMENT ME!
+     * @return  title border
      */
     Border getTitleBorder();
     /**
-     * DOCUMENT ME!
+     * Returns the footer border.
      *
-     * @return  DOCUMENT ME!
+     * @return  footer border
      */
     Border getFooterBorder();
     /**
-     * DOCUMENT ME!
+     * Returns the centerborder.
      *
-     * @return  DOCUMENT ME!
+     * @return  center border
      */
     Border getCenterrBorder();
 }

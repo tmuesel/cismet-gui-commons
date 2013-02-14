@@ -263,7 +263,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
      *
      * @param  event  the <code>ActionEvent</code> object
      *
-     * @see javax.swing.event.EventListenerList
+     * @see    javax.swing.event.EventListenerList
      */
     @Override
     protected void fireActionPerformed(final ActionEvent event) {
