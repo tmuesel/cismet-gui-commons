@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.HashMap;
 
 /**
- * Acceshandler Interface
+ * Acceshandler Interface.
  *
  * @author   spuhl
  * @version  $Revision$, $Date$
@@ -29,7 +29,7 @@ public interface AccessHandler {
     //~ Enums ------------------------------------------------------------------
 
     /**
-     * Acces Methods Enumaration
+     * Acces Methods Enumaration.
      *
      * @version  $Revision$, $Date$
      */
@@ -40,8 +40,7 @@ public interface AccessHandler {
         POST_REQUEST, GET_REQUEST, POST_REQUEST_NO_TUNNEL, GET_REQUEST_NO_TUNNEL
     }
     /**
-     * Acces Handler Types Enumaration
-     * todo ein handler könnte mehr als einen Typ verarbeiten.
+     * Acces Handler Types Enumaration todo ein handler könnte mehr als einen Typ verarbeiten.
      *
      * @version  $Revision$, $Date$
      */
@@ -55,7 +54,7 @@ public interface AccessHandler {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Checks whether the given Access_Method is supported or not
+     * Checks whether the given Access_Method is supported or not.
      *
      * @param   method  Access Method
      *
@@ -63,14 +62,14 @@ public interface AccessHandler {
      */
     boolean isAccessMethodSupported(ACCESS_METHODS method);
     /**
-     * Returns the Handler Type
+     * Returns the Handler Type.
      *
      * @return  Type
      */
     ACCESS_HANDLER_TYPES getHandlerType();
     /**
-     * Sends a Access Request to the given url.
-     * todo idee default dorequest ohne accessMethod jeder handler entscheided selbst wie der default fall aussieht.
+     * Sends a Access Request to the given url. todo idee default dorequest ohne accessMethod jeder handler entscheided
+     * selbst wie der default fall aussieht.
      *
      * @param   url               The URL, where the Request is send to
      * @param   requestParameter  The payload

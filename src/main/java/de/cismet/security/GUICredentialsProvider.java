@@ -109,7 +109,7 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the UserName
+     * Returns the UserName.
      *
      * @return  username
      */
@@ -118,7 +118,7 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * Returns the Username-Password Credentials
+     * Returns the Username-Password Credentials.
      *
      * @return  usernamePasswordCredentials
      */
@@ -127,7 +127,7 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * Sets the Username-Password Credentials
+     * Sets the Username-Password Credentials.
      *
      * @param  creds  usernamePasswordCredentials
      */
@@ -136,16 +136,16 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * Request additional {@link org.apache.commons.httpclient.Credentials authentication credentials}
-     * 
-     * @param authscheme the {@link org.apache.commons.httpclient.auth.AuthScheme authentication scheme}
-     * @param host the authentication host
-     * @param port the port of the authentication ost
-     * @param proxy <code>true</code> if autheticationg with a proxy, <cod>false</code> otherwise
-     * 
-     * @return <code>authentication credentials</code>
-     * 
-     * @throws CredentialsNotAvailableException 
+     * Request additional {@link org.apache.commons.httpclient.Credentials authentication credentials}.
+     *
+     * @param   authscheme  the {@link org.apache.commons.httpclient.auth.AuthScheme authentication scheme}
+     * @param   host        the authentication host
+     * @param   port        the port of the authentication ost
+     * @param   proxy       <code>true</code> if autheticationg with a proxy, <cod>false otherwise
+     *
+     * @return  <code>authentication credentials</code>
+     *
+     * @throws  CredentialsNotAvailableException  DOCUMENT ME!
      */
     @Override
     public Credentials getCredentials(
@@ -192,10 +192,11 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * Method that opens a LoginDialog. The Dialog shows the last authenticated username and it demands an possible Username-Password Credentials.
-     * 
+     * Method that opens a LoginDialog. The Dialog shows the last authenticated username and it demands an possible
+     * Username-Password Credentials.
      *
-     * @throws  CredentialsNotAvailableException if the Authentication fails the Method throws a CredentialsNotAvaiableException.
+     * @throws  CredentialsNotAvailableException  if the Authentication fails the Method throws a
+     *                                            CredentialsNotAvaiableException.
      */
     private void requestUsernamePassword() throws CredentialsNotAvailableException {
         try {
@@ -260,15 +261,16 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * authenticate the given password and the given password. If the Authentication succeed the {@link #isAuthenticationDone} will set to true, otherwise not.
-     * 
-     * @param name username
-     * @param password password
-     * @param server server
-     * 
-     * @return <code>true</code>, if the authentication succeeded, otherwise <code>false</code>
-     * 
-     * @throws Exception
+     * authenticate the given password and the given password. If the Authentication succeed the
+     * {@link #isAuthenticationDone} will set to true, otherwise not.
+     *
+     * @param   name      username
+     * @param   password  password
+     * @param   server    server
+     *
+     * @return  <code>true</code>, if the authentication succeeded, otherwise <code>false</code>
+     *
+     * @throws  Exception  DOCUMENT ME!
      */
     @Override
     public boolean authenticate(final String name, final char[] password, final String server) throws Exception {
@@ -298,9 +300,9 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * Returns the status of {@link #isAuthenticationCanceled}
+     * Returns the status of {@link #isAuthenticationCanceled}.
      *
-     * @return  <code>true</code>, if the Authentication is canceled, otherwise <code>false<code>
+     * @return  <code>true</code>, if the Authentication is canceled, otherwise <code>false</code>
      */
     public boolean isAuthenticationCanceled() {
         return isAuthenticationCanceled;
@@ -368,7 +370,7 @@ public class GUICredentialsProvider extends LoginService implements CredentialsP
     }
 
     /**
-     * Sets the Title for the Server
+     * Sets the Title for the Server.
      *
      * @param  title  Title
      */

@@ -90,7 +90,7 @@ public abstract class PasswordDialog extends LoginService {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the Username
+     * Returns the Username.
      *
      * @return  Username
      */
@@ -99,7 +99,7 @@ public abstract class PasswordDialog extends LoginService {
     }
 
     /**
-     * Sets the Username Password Credentials
+     * Sets the Username Password Credentials.
      *
      * @param  creds  Credential
      */
@@ -197,7 +197,7 @@ public abstract class PasswordDialog extends LoginService {
     public abstract boolean authenticate(String name, char[] password, String server) throws Exception;
 
     /**
-     * Returns the status of {@link #isAuthenticationCanceled}
+     * Returns the status of {@link #isAuthenticationCanceled}.
      *
      * @return  <code>isAuthenticationCanceled</code>
      */
@@ -206,7 +206,7 @@ public abstract class PasswordDialog extends LoginService {
     }
 
     /**
-     * Sets the Title for the Server
+     * Sets the Title for the Server.
      *
      * @param  title  Title
      */

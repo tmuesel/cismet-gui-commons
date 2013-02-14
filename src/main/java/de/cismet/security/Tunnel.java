@@ -12,7 +12,7 @@
 package de.cismet.security;
 
 /**
- * Access through Tunnel
+ * Access through Tunnel.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
