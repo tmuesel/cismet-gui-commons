@@ -12,7 +12,7 @@ import java.util.Collection;
 import javax.swing.JComponent;
 
 /**
- * DOCUMENT ME!
+ * Custom button provider interface
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -22,9 +22,9 @@ public interface CustomButtonProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the custom button
      *
-     * @return  DOCUMENT ME!
+     * @return  custom button
      */
     Collection<JComponent> getCustomButtons();
 }

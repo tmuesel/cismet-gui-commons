@@ -12,7 +12,7 @@
 package de.cismet.tools.gui;
 
 /**
- * DOCUMENT ME!
+ * DoNotWrap
  *
  * @author   thorsten
  * @version  $Revision$, $Date$

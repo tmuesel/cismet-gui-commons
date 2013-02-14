@@ -46,6 +46,20 @@ public class ColorRenderer extends JLabel implements TableCellRenderer {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Returns the component used for drawing the cell. This method is used to configure the renderer appropriately
+     * befor drawing.
+     *
+     * @param   table       <code>null</code>; does not affect
+     * @param   color       the color of the cell to be rendered.
+     * @param   isSelected  <code>True</code> if the cell is to be rendered with selection highlighted: otherwise <code>
+     *                      false</code>
+     * @param   hasFocus    <code>null</code>; does not affect
+     * @param   row         <code>null</code>; does not affect
+     * @param   column      <code>null</code>; does not affect
+     *
+     * @return  component used for drawing the cell
+     */
     @Override
     public Component getTableCellRendererComponent(final JTable table,
             final Object color,

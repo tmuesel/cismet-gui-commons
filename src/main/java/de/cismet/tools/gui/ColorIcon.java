@@ -45,6 +45,14 @@ public class ColorIcon implements Icon {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Draws the Icon at the specified location.
+     *
+     * @param  c  <code>null</code>; does not affect
+     * @param  g  graphics used
+     * @param  x  X-coordinate
+     * @param  y  Y-coordinate
+     */
     @Override
     public void paintIcon(final Component c, final Graphics g, final int x, final int y) {
         final Graphics2D g2d = (Graphics2D)g.create();
@@ -55,11 +63,21 @@ public class ColorIcon implements Icon {
         g2d.dispose();
     }
 
+    /**
+     * Returns the icon's width.
+     *
+     * @return  icon's wisth
+     */
     @Override
     public int getIconWidth() {
         return width;
     }
 
+    /**
+     * Returns the icon's height.
+     *
+     * @return  icon's height.
+     */
     @Override
     public int getIconHeight() {
         return height;

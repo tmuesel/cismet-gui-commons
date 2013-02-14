@@ -12,7 +12,7 @@ import org.jdesktop.fuse.ResourceInjector;
 import java.util.Properties;
 
 /**
- * DOCUMENT ME!
+ * Fuseloader
  *
  * @author   nhaffke
  * @version  $Revision$, $Date$

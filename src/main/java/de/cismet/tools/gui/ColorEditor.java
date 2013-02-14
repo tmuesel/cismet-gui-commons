@@ -100,16 +100,15 @@ public class ColorEditor extends AbstractCellEditor implements TableCellEditor, 
     }
 
     /**
-     * Sets the initial value for the editor.
+     * Sets the initial value for the editor. Return the component that should be added to the client's Component
+     * hierarchy. Once installed in the client's hierarchy this component will the be able to draw and receive user
+     * input.
      *
-     * <p>Return the component that should be added to the client's Component hierarchy. Once installed in the client's
-     * hierarchy this component will the be able to draw and receive user input.</p>
-     *
-     * @param   table       null
+     * @param   table       <code>null</code>; does not affect
      * @param   value       the colorvalue of the cell to be edited.
-     * @param   isSelected  null
-     * @param   row         null
-     * @param   column      null
+     * @param   isSelected  <code>null</code>; does not affect
+     * @param   row         <code>null</code>; does not affect
+     * @param   column      <code>null</code>; does not affect
      *
      * @return  button for editing
      */

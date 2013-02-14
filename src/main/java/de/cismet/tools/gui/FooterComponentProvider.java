@@ -14,7 +14,7 @@ package de.cismet.tools.gui;
 import javax.swing.JComponent;
 
 /**
- * DOCUMENT ME!
+ * Provides footer components.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -24,9 +24,9 @@ public interface FooterComponentProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the footer component
      *
-     * @return  DOCUMENT ME!
+     * @return  footer component
      */
     JComponent getFooterComponent();
 }

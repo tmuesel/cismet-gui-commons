@@ -14,7 +14,7 @@ package de.cismet.tools.gui;
 import javax.swing.JComponent;
 
 /**
- * DOCUMENT ME!
+ * Wrapped component interface.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -24,9 +24,9 @@ public interface WrappedComponent {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the original {@link javax.swing.JComponent component}.
      *
-     * @return  DOCUMENT ME!
+     * @return  original component
      */
     JComponent getOriginalComponent();
 }

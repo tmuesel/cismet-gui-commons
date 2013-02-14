@@ -20,7 +20,7 @@ import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 
 /**
- * DOCUMENT ME!
+ * Default popupmenu listener.
  *
  * @author   therter
  * @version  $Revision$, $Date$
@@ -37,7 +37,7 @@ public class DefaultPopupMenuListener extends MouseAdapter {
     /**
      * Creates a new instance of CataloguePopupMenuListener.
      *
-     * @param  popupMenu  DOCUMENT ME!
+     * @param  popupMenu  popupmenu
      */
     public DefaultPopupMenuListener(final JPopupMenu popupMenu) {
         this.popupMenu = popupMenu;
@@ -46,9 +46,9 @@ public class DefaultPopupMenuListener extends MouseAdapter {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Invoked when the mouse button has been clicked (pressed and released) on a component.
+     * Invoked when the mouse button has been clicked (pressed) on a component.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse press
      */
     /* public void mouseClicked(MouseEvent e)
      * { if(e.isPopupTrigger()) { popupMenu.show((Component)e.getSource(), e.getX(), e.getY()); }}*/
@@ -57,15 +57,20 @@ public class DefaultPopupMenuListener extends MouseAdapter {
         processPopupTrigger(e);
     }
 
+    /**
+     * Invokes when the mouse button has been clicked (released) on a component.
+     * 
+     * @param e mouse release
+     */
     @Override
     public void mouseReleased(final MouseEvent e) {
         processPopupTrigger(e);
     }
 
     /**
-     * DOCUMENT ME!
+     * Processes the popoup trigger.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse click(press or release)
      */
     private void processPopupTrigger(final MouseEvent e) {
         // windows uses the mouseReleased event for popup menus and Linux uses the mousePressed event.

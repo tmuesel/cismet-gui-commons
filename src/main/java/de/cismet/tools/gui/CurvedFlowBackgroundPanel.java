@@ -27,7 +27,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * DOCUMENT ME!
+ * Provides Curved flow background panel.
  *
  * @version  $Revision$, $Date$
  */
@@ -47,6 +47,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
 
     /**
      * Creates a new CurvedFlowBackgroundPanel object.
+     * While design mode is actived, a double mouse click opens a dialog. In this dialog the height of the upper and lower layer can be modified.
      */
     public CurvedFlowBackgroundPanel() {
         super();
@@ -131,10 +132,10 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Creates a new CurvedFlowBackgroundPanel object.
+     * Creates a new CurvedFlowBackgroundPanel object with specified <code>oben</code> and <code>unten</code>
      *
-     * @param  OBEN   DOCUMENT ME!
-     * @param  UNTEN  DOCUMENT ME!
+     * @param  OBEN   height of the upper layer
+     * @param  UNTEN  height of the lower layer
      */
     public CurvedFlowBackgroundPanel(final int OBEN, final int UNTEN) {
         this();
@@ -145,7 +146,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the info <code>String</code> for the design dialog.
      *
      * @return  DOCUMENT ME!
      */
@@ -156,30 +157,30 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the <code>designMode</code> status
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>designMode</code> status
      */
     public boolean isDesignMode() {
         return designMode;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the <code>designMode</code> status
      *
-     * @param  designMode  DOCUMENT ME!
+     * @param  designMode  <code>designMode</code> status
      */
     public void setDesignMode(final boolean designMode) {
         this.designMode = designMode;
     }
 
     /**
-     * DOCUMENT ME!
+     * creates the upper layer
      *
-     * @param   WIDTH   DOCUMENT ME!
-     * @param   HEIGHT  DOCUMENT ME!
+     * @param   WIDTH   width
+     * @param   HEIGHT  height
      *
-     * @return  DOCUMENT ME!
+     * @return  upper layer
      */
     private java.awt.image.BufferedImage createOben(final int WIDTH, final int HEIGHT) {
         if ((WIDTH <= 0) || (HEIGHT <= 0)) {
@@ -304,13 +305,15 @@ public class CurvedFlowBackgroundPanel extends JPanel {
         return IMAGE;
     }
     /**
-     * G2.drawImage(createUnten_EBENE_1_0_Image(100, 100), 0, 0, null);
+     * creates the lower layer
      *
-     * @param   WIDTH   DOCUMENT ME!
-     * @param   HEIGHT  DOCUMENT ME!
+     * @param   WIDTH   width
+     * @param   HEIGHT  height
      *
-     * @return  DOCUMENT ME!
+     * @return  lower layer
      */
+    
+    //G2.drawImage(createUnten_EBENE_1_0_Image(100, 100), 0, 0, null);
     private java.awt.image.BufferedImage createUnten(final int WIDTH, final int HEIGHT) {
         if ((WIDTH <= 0) || (HEIGHT <= 0)) {
             return null;
@@ -434,14 +437,14 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * creates the flow
      *
-     * @param   WIDTH         DOCUMENT ME!
-     * @param   HEIGHT        DOCUMENT ME!
-     * @param   HEIGHT_OBEN   DOCUMENT ME!
-     * @param   HEIGHT_UNTEN  DOCUMENT ME!
+     * @param   WIDTH         width
+     * @param   HEIGHT        height of the flow
+     * @param   HEIGHT_OBEN   height of the upper layer
+     * @param   HEIGHT_UNTEN  height of the lower layer
      *
-     * @return  DOCUMENT ME!
+     * @return  flow
      */
     private java.awt.image.BufferedImage createFlow(final int WIDTH,
             final int HEIGHT,
@@ -670,6 +673,11 @@ public class CurvedFlowBackgroundPanel extends JPanel {
         return IMAGE;
     }
 
+    /**
+     * Paints the flow
+     * 
+     * @param g graphics 
+     */
     @Override
     public void paint(final Graphics g) {
         super.paint(g);
@@ -677,18 +685,18 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the height of the upper layer.
      *
-     * @return  DOCUMENT ME!
+     * @return  height of the upper layer
      */
     public int getOben() {
         return oben;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the height of the upper layer and repaints the panel.
      *
-     * @param  oben  DOCUMENT ME!
+     * @param  oben  height of the upper layer
      */
     public void setOben(final int oben) {
         this.oben = oben;
@@ -699,9 +707,10 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Calculates the height of the upper layer with the given relative height 
+     * and {@link #setOben(int) sets oben} to the calculated value.
      *
-     * @param  fractionOben  DOCUMENT ME!
+     * @param  fractionOben  realtive height
      */
     public void setOben(final double fractionOben) {
         obenFraction = fractionOben;
@@ -710,9 +719,10 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Calculates the height of the lower layer with the given relative height 
+     * and {@link #setUnten(int) sets oben} to the calculated value.
      *
-     * @param  fractionUnten  DOCUMENT ME!
+     * @param  fractionUnten  relative height
      */
     public void setUnten(final double fractionUnten) {
         untenFraction = fractionUnten;
@@ -721,18 +731,18 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the height of the lower layer
      *
-     * @return  DOCUMENT ME!
+     * @return  height of the lower layer
      */
     public int getUnten() {
         return unten;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the height of the lower layer and repaints the panel.
      *
-     * @param  unten  DOCUMENT ME!
+     * @param  unten  height of the lower layer
      */
     public void setUnten(final int unten) {
         this.unten = unten;
@@ -743,18 +753,18 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the status of the <code>relativeHeights</code>.
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>True</code>, if relative heights are activated. Otherwise <code>false</code>
      */
     public boolean isRelativeHeights() {
         return relativeHeights;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the status of the <code>relativeHeight</code>
      *
-     * @param  relativeHeights  DOCUMENT ME!
+     * @param  relativeHeights  <code>True</code>, if relative heights are activated. Otherwise <code>false</code>
      */
     public void setRelativeHeights(final boolean relativeHeights) {
         this.relativeHeights = relativeHeights;

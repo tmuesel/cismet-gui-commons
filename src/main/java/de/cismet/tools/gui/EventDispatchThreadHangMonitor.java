@@ -84,7 +84,7 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
     /**
      * Returns how long we've been processing the current event (in milliseconds).
      *
-     * @return  DOCUMENT ME!
+     * @return  processing time (in ms)
      */
     private long timeSoFar() {
         final long currentTime = System.currentTimeMillis();
@@ -102,7 +102,7 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
      * Overrides EventQueue.dispatchEvent to call our pre and post hooks either side of the system's event dispatch
      * code.
      *
-     * @param  event  DOCUMENT ME!
+     * @param  event  an istance of {@link java.awt.AWTEvent} or a subclass of it
      */
     @Override
     protected void dispatchEvent(final AWTEvent event) {
@@ -140,7 +140,7 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
     //~ Inner Classes ----------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Hang checker repeatly executed by the time.
      *
      * @version  $Revision$, $Date$
      */
@@ -149,7 +149,7 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * DOCUMENT ME!
+         * Checks for hang. If the Thread hangs the <code>HangChecker</code> will report the hang.
          */
         @Override
         public void run() {
@@ -161,7 +161,8 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         }
 
         /**
-         * DOCUMENT ME!
+         * Checks the AWT for hang. If it the passed time is greater than
+         * {@link #UNREASONABLE_DISPATCH_DURATION_MS} it {@link #reportHang() reports the hang}.
          */
         private void checkForHang() {
             if (startedLastEventDispatchAt == NO_CURRENT_EVENT) {
@@ -176,7 +177,8 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         }
 
         /**
-         * DOCUMENT ME!
+         * Reports the hang in the system console and sends a fatal error message to the logger.
+         * Reports a hang only ones.
          */
         private void reportHang() {
             if (reportedHang) {
@@ -194,10 +196,10 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         }
 
         /**
-         * DOCUMENT ME!
+         * prints the StackTrace in the system console
          *
-         * @param  out         DOCUMENT ME!
-         * @param  stackTrace  DOCUMENT ME!
+         * @param  out         system's printstream
+         * @param  stackTrace  stacktrace
          */
         private void printStackTrace(final PrintStream out, final StackTraceElement[] stackTrace) {
             // We know that it's not interesting to show any code above where
