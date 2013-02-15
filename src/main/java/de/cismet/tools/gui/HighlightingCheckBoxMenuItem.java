@@ -12,7 +12,7 @@ import java.awt.Color;
 import javax.swing.JCheckBoxMenuItem;
 
 /**
- * DOCUMENT ME!
+ * Extended {@link javax.swing.JCheckBoxMenuItem}, which is highlighted if it is selected.
  *
  * @author   jweintraut
  * @version  $Revision$, $Date$
@@ -33,10 +33,10 @@ public class HighlightingCheckBoxMenuItem extends JCheckBoxMenuItem {
     //~ Constructors -----------------------------------------------------------
 
     /**
-     * Creates a new HighlightingCheckBoxMenuItem object.
+     * Creates a new HighlightingCheckBoxMenuItem object with given highlighting colors.
      *
-     * @param  selectedBackgroundColor  DOCUMENT ME!
-     * @param  selectedForegroundColor  DOCUMENT ME!
+     * @param  selectedBackgroundColor  Highlighted background color
+     * @param  selectedForegroundColor  Highlighted foreground color
      */
     public HighlightingCheckBoxMenuItem(
             final Color selectedBackgroundColor,
@@ -50,9 +50,10 @@ public class HighlightingCheckBoxMenuItem extends JCheckBoxMenuItem {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Checks whether the checkbox is selected, or not, and returns the highlighted background color, if it is selected.
+     * Otherwise it returns the normal background color.
      *
-     * @return  DOCUMENT ME!
+     * @return  highlighted background color, if the checkbox is selected. Otherwise the normal background color.
      */
     @Override
     public Color getBackground() {
@@ -64,9 +65,10 @@ public class HighlightingCheckBoxMenuItem extends JCheckBoxMenuItem {
     }
 
     /**
-     * DOCUMENT ME!
+     * Checks whether the checkbox is selected, or not, and returns the highlighted foreground color, if it is selected.
+     * Otherwise it returns the normal foreground color.
      *
-     * @return  DOCUMENT ME!
+     * @return  highlighted foreground color, if the checkbox is selected. Otherwise the normal foreground color.
      */
     @Override
     public Color getForeground() {
@@ -78,36 +80,36 @@ public class HighlightingCheckBoxMenuItem extends JCheckBoxMenuItem {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the highlighted background color.
      *
-     * @return  DOCUMENT ME!
+     * @return  highlighted background color
      */
     public Color getSelectedBackgroundColor() {
         return selectedBackgroundColor;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the highlighted background color.
      *
-     * @param  selectedBackgroundColor  DOCUMENT ME!
+     * @param  selectedBackgroundColor  highlighted background color
      */
     public void setSelectedBackgroundColor(final Color selectedBackgroundColor) {
         this.selectedBackgroundColor = selectedBackgroundColor;
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the highlighted foreground color.
      *
-     * @return  DOCUMENT ME!
+     * @return  highlighted foreground color
      */
     public Color getSelectedForegroundColor() {
         return selectedForegroundColor;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the highlighted foreground color.
      *
-     * @param  selectedForegroundColor  DOCUMENT ME!
+     * @param  selectedForegroundColor  highlighted foreground color
      */
     public void setSelectedForegroundColor(final Color selectedForegroundColor) {
         this.selectedForegroundColor = selectedForegroundColor;

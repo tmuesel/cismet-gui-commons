@@ -24,7 +24,7 @@ public interface FooterComponentProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns the footer component
+     * Returns the footer component.
      *
      * @return  footer component
      */

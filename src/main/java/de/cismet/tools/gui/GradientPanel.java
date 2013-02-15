@@ -14,7 +14,7 @@ package de.cismet.tools.gui;
 import java.awt.*;
 import java.awt.Color;
 /**
- * JPanel mit einem Farbverlauf als Hintergrund.
+ * JPanel with gradient background. The gradient effect goes from left to right.
  *
  * @author   hell
  * @version  $Revision$, $Date$
@@ -29,7 +29,8 @@ public class GradientPanel extends javax.swing.JPanel {
     //~ Constructors -----------------------------------------------------------
 
     /**
-     * Creates a new instance of GradientPanel.
+     * Creates a new instance of GradientPanel with the left color set to the background color of this panel and with
+     * the right color set to the foreground color of this panel.
      */
     public GradientPanel() {
         setLeftColor(this.getBackground());
@@ -37,10 +38,10 @@ public class GradientPanel extends javax.swing.JPanel {
     }
 
     /**
-     * Erzeugt eine neue Instanz und setzt gleichzeitig den Farbverlauf.
+     * Creates a new instance of GradientPanel with the colors set to the given colors.
      *
-     * @param  leftColor   Linke Farbe
-     * @param  rightColor  Rechte Farbe
+     * @param  leftColor   Left Farbe
+     * @param  rightColor  Right Farbe
      */
     public GradientPanel(final Color leftColor, final Color rightColor) {
         this.setLeftColor(leftColor);
@@ -49,6 +50,11 @@ public class GradientPanel extends javax.swing.JPanel {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Paint the gradient panel background.
+     *
+     * @param  g  graphics
+     */
     @Override
     protected void paintComponent(final java.awt.Graphics g) {
         final int w = getWidth();
@@ -59,36 +65,36 @@ public class GradientPanel extends javax.swing.JPanel {
     }
 
     /**
-     * Liefert die rechte Farbe.
+     * Returns the right color.
      *
-     * @return  Rechte Farbe
+     * @return  right color
      */
     public Color getRightColor() {
         return rightColor;
     }
 
     /**
-     * setzt die rechte Farbe.
+     * Sets the right color.
      *
-     * @param  rightColor  Rechte Farbe
+     * @param  rightColor  right color
      */
     public void setRightColor(final Color rightColor) {
         this.rightColor = rightColor;
     }
 
     /**
-     * Liefert die linke Farbe.
+     * Returns the left color.
      *
-     * @return  Linke Farbe
+     * @return  left color
      */
     public Color getLeftColor() {
         return leftColor;
     }
 
     /**
-     * Setzt die linke Farbe.
+     * Sets the left color.
      *
-     * @param  leftColor  Linke Farbe
+     * @param  leftColor  left color
      */
     public void setLeftColor(final Color leftColor) {
         this.leftColor = leftColor;

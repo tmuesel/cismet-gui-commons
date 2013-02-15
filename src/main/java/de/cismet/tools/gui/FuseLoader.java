@@ -12,7 +12,7 @@ import org.jdesktop.fuse.ResourceInjector;
 import java.util.Properties;
 
 /**
- * Fuseloader
+ * Fuseloader adds the swing module to the ResourceInjector and loads style properties.
  *
  * @author   nhaffke
  * @version  $Revision$, $Date$
@@ -30,7 +30,8 @@ public final class FuseLoader {
     //~ Constructors -----------------------------------------------------------
 
     /**
-     * Creates a new FuseLoader object.
+     * Creates a new FuseLoader object. Adds the swing module to the ResourceInjector and loads style properties. Saves
+     * this Object as <code>instance</code>.
      */
     private FuseLoader() {
         instance = this;
@@ -56,7 +57,7 @@ public final class FuseLoader {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * If Fuseloader has no instance create new FuseLoader and save it as instance.
      */
     public static void load() {
         if (instance == null) {

@@ -46,8 +46,8 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     //~ Constructors -----------------------------------------------------------
 
     /**
-     * Creates a new CurvedFlowBackgroundPanel object.
-     * While design mode is actived, a double mouse click opens a dialog. In this dialog the height of the upper and lower layer can be modified.
+     * Creates a new CurvedFlowBackgroundPanel object. While design mode is actived, a double mouse click opens a
+     * dialog. In this dialog the height of the upper and lower layer can be modified.
      */
     public CurvedFlowBackgroundPanel() {
         super();
@@ -132,7 +132,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Creates a new CurvedFlowBackgroundPanel object with specified <code>oben</code> and <code>unten</code>
+     * Creates a new CurvedFlowBackgroundPanel object with specified <code>oben</code> and <code>unten.</code>
      *
      * @param  OBEN   height of the upper layer
      * @param  UNTEN  height of the lower layer
@@ -157,7 +157,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Returns the <code>designMode</code> status
+     * Returns the <code>designMode</code> status.
      *
      * @return  <code>designMode</code> status
      */
@@ -166,7 +166,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Sets the <code>designMode</code> status
+     * Sets the <code>designMode</code> status.
      *
      * @param  designMode  <code>designMode</code> status
      */
@@ -175,7 +175,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * creates the upper layer
+     * creates the upper layer.
      *
      * @param   WIDTH   width
      * @param   HEIGHT  height
@@ -305,15 +305,15 @@ public class CurvedFlowBackgroundPanel extends JPanel {
         return IMAGE;
     }
     /**
-     * creates the lower layer
+     * creates the lower layer.
      *
      * @param   WIDTH   width
      * @param   HEIGHT  height
      *
      * @return  lower layer
      */
-    
-    //G2.drawImage(createUnten_EBENE_1_0_Image(100, 100), 0, 0, null);
+
+    // G2.drawImage(createUnten_EBENE_1_0_Image(100, 100), 0, 0, null);
     private java.awt.image.BufferedImage createUnten(final int WIDTH, final int HEIGHT) {
         if ((WIDTH <= 0) || (HEIGHT <= 0)) {
             return null;
@@ -437,7 +437,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * creates the flow
+     * creates the flow.
      *
      * @param   WIDTH         width
      * @param   HEIGHT        height of the flow
@@ -674,9 +674,9 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Paints the flow
-     * 
-     * @param g graphics 
+     * Paints the flow.
+     *
+     * @param  g  graphics
      */
     @Override
     public void paint(final Graphics g) {
@@ -707,8 +707,8 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Calculates the height of the upper layer with the given relative height 
-     * and {@link #setOben(int) sets oben} to the calculated value.
+     * Calculates the height of the upper layer with the given relative height and {@link #setOben(int) sets oben} to
+     * the calculated value.
      *
      * @param  fractionOben  realtive height
      */
@@ -719,8 +719,8 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Calculates the height of the lower layer with the given relative height 
-     * and {@link #setUnten(int) sets oben} to the calculated value.
+     * Calculates the height of the lower layer with the given relative height and {@link #setUnten(int) sets oben} to
+     * the calculated value.
      *
      * @param  fractionUnten  relative height
      */
@@ -731,7 +731,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Returns the height of the lower layer
+     * Returns the height of the lower layer.
      *
      * @return  height of the lower layer
      */
@@ -762,7 +762,7 @@ public class CurvedFlowBackgroundPanel extends JPanel {
     }
 
     /**
-     * Sets the status of the <code>relativeHeight</code>
+     * Sets the status of the <code>relativeHeight.</code>
      *
      * @param  relativeHeights  <code>True</code>, if relative heights are activated. Otherwise <code>false</code>
      */

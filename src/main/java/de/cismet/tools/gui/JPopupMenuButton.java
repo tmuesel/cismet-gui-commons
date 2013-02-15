@@ -14,8 +14,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.*;
 
 /**
- * An implementation of a "popup menu button". See a short <a href="http://flexo.cismet.de/gadgets/JPopupMenuButton/">
- * description and demo</a> on the website.
+ * An implementation of a "popup menu button".
  *
  * <p>Very easy to use:<br>
  * - Create the Button<br>
@@ -67,12 +66,13 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Returns whether the given point x,y is in the popup area or not.
+     * Checks whether the given point x,y is in the popup area or not. It only tests the X-Coordinate of the point!
      *
-     * @param   x  DOCUMENT ME!
-     * @param   y  DOCUMENT ME!
+     * @param   x  X-Coordinate
+     * @param   y  Y-Coordinate
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>True</code>, if the point's X-Coordinate is inside the popup width. Otherwise returns <code>
+     *          false</code>
      */
     private boolean isOverMenuPopupArea(final int x, final int y) {
         return (x >= (getWidth() - getIcon().getIconWidth() + arrowXOffset - getInsets().right))
@@ -82,7 +82,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when the mouse cursor has been moved onto a component but no buttons have been pushed.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mouseMoved(final java.awt.event.MouseEvent e) {
@@ -101,7 +101,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
      * <p>Due to platform-dependent Drag&Drop implementations, <code>MOUSE_DRAGGED</code> events may not be delivered
      * during a native Drag&Drop operation.</p>
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mouseDragged(final java.awt.event.MouseEvent e) {
@@ -110,7 +110,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when a mouse button has been released on a component.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mouseReleased(final java.awt.event.MouseEvent e) {
@@ -119,7 +119,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when a mouse button has been pressed on a component.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mousePressed(final java.awt.event.MouseEvent e) {
@@ -128,7 +128,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when the mouse exits a component.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mouseExited(final java.awt.event.MouseEvent e) {
@@ -139,7 +139,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when the mouse enters a component.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mouseEntered(final java.awt.event.MouseEvent e) {
@@ -148,7 +148,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when the mouse button has been clicked (pressed and released) on a component.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  mouse event
      */
     @Override
     public void mouseClicked(final java.awt.event.MouseEvent e) {
@@ -165,7 +165,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Invoked when an action occurs.
      *
-     * @param  e  DOCUMENT ME!
+     * @param  e  action event
      */
     public void actionPerformed(final java.awt.event.ActionEvent e) {
         final ActionEvent thisEvent = new ActionEvent(this, 0, "ACTION"); // NOI18N
@@ -192,6 +192,12 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
         evaluateIcon(false);
     }
 
+    /**
+     * Sets the selected icon for the button. Invokes {@link #evaluateIcon(boolean)} with <code>isselected</code> set to
+     * <code>true</code>.
+     *
+     * @param  defaultSelectedIcon  the icon used as the "selected" image
+     */
     @Override
     public void setSelectedIcon(final javax.swing.Icon defaultSelectedIcon) {
         userDefinedSelectedIcon = defaultSelectedIcon;
@@ -201,7 +207,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
     /**
      * Sets the right down arrow icon.
      *
-     * @param  isSelected  DOCUMENT ME!
+     * @param  isSelected  <code>true</code>, if the button is selected. Otherwise <code>false</code>.
      */
     private void evaluateIcon(final boolean isSelected) {
         if (mouseInPopupArea && isEnabled()) {
@@ -215,7 +221,7 @@ public class JPopupMenuButton extends JButton implements MouseListener, MouseMot
      * Sets the given Icon as down arrow.
      *
      * @param  arrow       the icon used as the arrow
-     * @param  isSelected  DOCUMENT ME!
+     * @param  isSelected  <code>true</code>, if the button is selected. Otherwise <code>false</code>
      */
     private void evaluateIcon(final Icon arrow, final boolean isSelected) {
         final Icon icon = ((userDefinedSelectedIcon != null) && isSelected) ? userDefinedSelectedIcon : userDefinedIcon;

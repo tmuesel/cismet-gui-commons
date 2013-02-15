@@ -161,8 +161,8 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         }
 
         /**
-         * Checks the AWT for hang. If it the passed time is greater than
-         * {@link #UNREASONABLE_DISPATCH_DURATION_MS} it {@link #reportHang() reports the hang}.
+         * Checks the AWT for hang. If it the passed time is greater than {@link #UNREASONABLE_DISPATCH_DURATION_MS} it
+         * {@link #reportHang() reports the hang}.
          */
         private void checkForHang() {
             if (startedLastEventDispatchAt == NO_CURRENT_EVENT) {
@@ -177,8 +177,8 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         }
 
         /**
-         * Reports the hang in the system console and sends a fatal error message to the logger.
-         * Reports a hang only ones.
+         * Reports the hang in the system console and sends a fatal error message to the logger. Reports a hang only
+         * ones.
          */
         private void reportHang() {
             if (reportedHang) {
@@ -196,7 +196,7 @@ public final class EventDispatchThreadHangMonitor extends EventQueue {
         }
 
         /**
-         * prints the StackTrace in the system console
+         * prints the StackTrace in the system console.
          *
          * @param  out         system's printstream
          * @param  stackTrace  stacktrace

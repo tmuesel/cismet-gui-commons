@@ -29,7 +29,7 @@ import javax.media.jai.RenderedImageAdapter;
 import de.cismet.security.WebAccessManager;
 
 /**
- * DOCUMENT ME!
+ * Picture reader which can store pictures as pages into a cache.
  *
  * @version  $Revision$, $Date$
  */
@@ -56,9 +56,14 @@ public class MultiPagePictureReader {
     /**
      * Creates a new MultiPagePictureReader object.
      *
-     * @param   imageFile  DOCUMENT ME!
+     * @param   imageFile  iamge
      *
-     * @throws  IOException  DOCUMENT ME!
+     * @throws  IOException  <ul><li>Throws IOException if:</li>
+     * <li>file is not valid (i.e. not existence or access right don't allow access)</li>
+     * <li>iamgeformat is not valid (only tiff or jpeg is allow!)</li>
+     * <li>{@link com.sun.media.jai.codec.FileSeekableStream}</li>
+     * <li>{@link com.sun.media.jai.codec.ImageDecoder#getNumPages()} </li>
+     * </ul>
      */
     public MultiPagePictureReader(final File imageFile) throws IOException {
         this(imageFile, true, false);
@@ -166,11 +171,11 @@ public class MultiPagePictureReader {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the Codec String according to the file extension.
      *
-     * @param   imagePath  DOCUMENT ME!
+     * @param   imagePath  image path
      *
-     * @return  DOCUMENT ME!
+     * @return  "jpeg" if the file is a jpeg file, "tiff" if the file is a tiff file.
      */
     private String getCodecString(final String imagePath) {
         final String filename = imagePath.toLowerCase();
@@ -184,11 +189,12 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the image restored from the cache.
      *
-     * @param   position  DOCUMENT ME!
+     * @param   position  position of the image in the cache
      *
-     * @return  DOCUMENT ME!
+     * @return  the image restored from the cache or <code>null</code> 
+     * if it isn't contained in cache or caching is deactived.
      */
     private BufferedImage getFromCache(final int position) {
         BufferedImage result = null;
@@ -205,34 +211,35 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * DOCUMENT ME!
+     * Adds the image to the cache
      *
-     * @param  position  DOCUMENT ME!
-     * @param  image     DOCUMENT ME!
+     * @param  position  position where the image should be placed
+     * @param  image     iamge to be cached
      */
     private void addToCache(final int position, final BufferedImage image) {
         cache[position] = new SoftReference<BufferedImage>(image);
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the number of pages in this instance
      *
-     * @return  DOCUMENT ME!
+     * @return  number of pages
      *
-     * @throws  IOException  DOCUMENT ME!
+     * @throws  IOException  throws IOException
      */
     public final int getNumberOfPages() throws IOException {
         return pageCount;
     }
 
     /**
-     * DOCUMENT ME!
+     * Loads the page
      *
-     * @param   page  DOCUMENT ME!
+     * @param   page  number of page
      *
-     * @return  DOCUMENT ME!
+     * @return  the page
      *
-     * @throws  IOException  DOCUMENT ME!
+     * @throws  IOException  throws IOException if the number is invalid more precily "-1" 
+     * or it is greater than ammount of pages in this instance.
      */
     public final BufferedImage loadPage(final int page) throws IOException {
         if ((page <= -1) || (page >= pageCount)) {
@@ -285,7 +292,7 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * DOCUMENT ME!
+     * closes the reader
      */
     public final void close() {
         try {

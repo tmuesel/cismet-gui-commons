@@ -59,8 +59,8 @@ public class DefaultPopupMenuListener extends MouseAdapter {
 
     /**
      * Invokes when the mouse button has been clicked (released) on a component.
-     * 
-     * @param e mouse release
+     *
+     * @param  e  mouse release
      */
     @Override
     public void mouseReleased(final MouseEvent e) {
