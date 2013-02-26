@@ -14,7 +14,7 @@ package de.cismet.tools.gui;
 import javax.swing.JComponent;
 
 /**
- * DOCUMENT ME!
+ * Provides title components.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -24,9 +24,9 @@ public interface TitleComponentProvider {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns the title component.
      *
-     * @return  DOCUMENT ME!
+     * @return  title component
      */
     JComponent getTitleComponent();
 }

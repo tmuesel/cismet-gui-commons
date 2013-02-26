@@ -28,7 +28,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 /**
- * DOCUMENT ME!
+ * Static gui tools for image editing.
  *
  * @author   thorsten.hell@cismet.de
  * @version  $Revision$, $Date$
@@ -39,27 +39,55 @@ public class Static2DTools {
     //~ Static fields/initializers ---------------------------------------------
 
     private static final transient Logger LOG = Logger.getLogger(Static2DTools.class);
+    /** For horizontal orientation, orientation has to be set to <code>0</code>. */
     public static int HORIZONTAL = 0;
+    /** For vertical orientation, orientation has to be set to <code>1</code>. */
     public static int VERTICAL = 1;
+    /** For left alignment, alignment has to be set to <code>2</code>. */
     public static int LEFT = 2;
+    /** For right alignment, alignment has to be set to <code>4</code>. */
     public static int RIGHT = 4;
+    /** For top alignment, alignment has to be set to <code>8</code>. */
     public static int TOP = 8;
+    /** For bottom alignment, alignment has to be set to <code>16</code>. */
     public static int BOTTOM = 16;
+    /** For center alignment, alignment has to be set to <code>32</code>. */
     public static int CENTER = 32;
 
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Joins multiple icons into one icon.
      *
-     * @param   icons        DOCUMENT ME!
-     * @param   gap          DOCUMENT ME!
-     * @param   orientation  DOCUMENT ME!
-     * @param   alignment    DOCUMENT ME!
+     * @param   icons        Array of icons
+     * @param   gap          Size of the gap between two icons
+     * @param   orientation  Orientation of the new icon.
      *
-     * @return  DOCUMENT ME!
+     *                       <ul>
+     *                         <li>horizontal = 0</li>
+     *                         <li>vertical = 1</li>
+     *                       </ul>
+     * @param   alignment    Alignment of the icons
      *
-     * @throws  IllegalArgumentException  DOCUMENT ME!
+     *                       <ul>
+     *                         <li>left = 2</li>
+     *                         <li>right = 4</li>
+     *                         <li>top = 8</li>
+     *                         <li>bottom = 16</li>
+     *                       </ul>
+     *
+     * @return  joined icon
+     *
+     * @throws  IllegalArgumentException  Throws IllegalArgumentException if:
+     *
+     *                                    <ul>
+     *                                      <li>The icon[] has a length of 0.</li>
+     *                                      <li>Orientation is neither set to 0 nor 1</li>
+     *                                      <li>Orientation is HORIZONTAL but aligment options is not in {@link #TOP},
+     *                                        {@link #CENTER} or {@link #BOTTOM}</li>
+     *                                      <li>Orientation is VERTICAL but aligment options is not in {@link #LEFT},
+     *                                        {@link #CENTER} or {@link #RIGHT}</li>
+     *                                    </ul>
      */
     public static Icon joinIcons(final Icon[] icons, final int gap, final int orientation, final int alignment) {
         int maxWidth = 0;
@@ -144,13 +172,13 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Creates a new overlay icon with the given image icon, width and height.
      *
-     * @param   overlayIcon  DOCUMENT ME!
-     * @param   width        DOCUMENT ME!
-     * @param   heigth       DOCUMENT ME!
+     * @param   overlayIcon  image icon
+     * @param   width        width
+     * @param   heigth       height
      *
-     * @return  DOCUMENT ME!
+     * @return  overlay icon
      */
     public static ImageIcon createOverlayIcon(final ImageIcon overlayIcon, final int width, final int heigth) {
         final Image scaledOverlayImage = overlayIcon.getImage()
@@ -160,12 +188,12 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Merges the given base and overlay icon into one new icon.
      *
-     * @param   base     DOCUMENT ME!
-     * @param   overlay  DOCUMENT ME!
+     * @param   base     base icon
+     * @param   overlay  overlaying icon
      *
-     * @return  DOCUMENT ME!
+     * @return  merged icon
      */
     public static Icon mergeIcons(final Icon base, final Icon overlay) {
         final int maxWidth = Math.max(base.getIconWidth(), overlay.getIconWidth());
@@ -379,15 +407,15 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Adds a border to the given icon. The border thickness is definied by left,right,top and bottom thickness.
      *
-     * @param   icon    DOCUMENT ME!
-     * @param   left    DOCUMENT ME!
-     * @param   right   DOCUMENT ME!
-     * @param   top     DOCUMENT ME!
-     * @param   bottom  DOCUMENT ME!
+     * @param   icon    icon to be brodered
+     * @param   left    space to the left
+     * @param   right   space to the right
+     * @param   top     space to the top
+     * @param   bottom  space to the bottom
      *
-     * @return  DOCUMENT ME!
+     * @return  bordered icon
      */
     public static Icon borderIcon(final Icon icon, final int left, final int right, final int top, final int bottom) {
         final BufferedImage bi = new BufferedImage(icon.getIconWidth() + left + right,
@@ -401,13 +429,14 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Removes unused border around the image. The image will be smaller than before because the border will be cut off.
+     * Borders are whitespace or transparent spaces.
      *
-     * @param   i                       DOCUMENT ME!
-     * @param   borderPixelsAfterwards  DOCUMENT ME!
-     * @param   scalingFactor           DOCUMENT ME!
+     * @param   i                       Image whose border should be removed
+     * @param   borderPixelsAfterwards  Border size after the removal
+     * @param   scalingFactor           Scaling factor
      *
-     * @return  DOCUMENT ME!
+     * @return  image without unused border.
      */
     public static Image removeUnusedBorder(final Image i,
             final int borderPixelsAfterwards,
@@ -486,12 +515,12 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Scales the image with the given factor.
      *
-     * @param   i              DOCUMENT ME!
-     * @param   scalingFactor  DOCUMENT ME!
+     * @param   i              Image
+     * @param   scalingFactor  Scaling factor
      *
-     * @return  DOCUMENT ME!
+     * @return  Scaled image
      */
     public static Image scaleImage(final Image i, final double scalingFactor) {
         final int newWidth = (int)(i.getWidth(null) * scalingFactor);
@@ -502,11 +531,11 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Converts the given image into a compatible image.
      *
-     * @param   image  DOCUMENT ME!
+     * @param   image  image to be converted
      *
-     * @return  DOCUMENT ME!
+     * @return  compatible image
      */
     public static BufferedImage toCompatibleImage(final Image image) {
         final GraphicsEnvironment e = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -526,25 +555,25 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Converts the RGB color to a RGBA color with the given alpha value.
      *
-     * @param   c      DOCUMENT ME!
-     * @param   alpha  DOCUMENT ME!
+     * @param   c      RGB color
+     * @param   alpha  alpha value
      *
-     * @return  DOCUMENT ME!
+     * @return  RGBA color
      */
     public static Color getAlphaColor(final Color c, final int alpha) {
         return getOffsetAlphaColor(c, new Color(0, 0, 0), alpha);
     }
 
     /**
-     * DOCUMENT ME!
+     * Converts the RGB color to a RGBA color withe the given alpha value and with the given offset.
      *
-     * @param   c       DOCUMENT ME!
-     * @param   offset  DOCUMENT ME!
-     * @param   alpha   DOCUMENT ME!
+     * @param   c       RGB color
+     * @param   offset  offset
+     * @param   alpha   alpha value
      *
-     * @return  DOCUMENT ME!
+     * @return  RGBA color
      */
     public static Color getOffsetAlphaColor(final Color c, final int offset, final int alpha) {
         final Color o = new Color(offset, offset, offset);
@@ -553,13 +582,13 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Converts the RGB color to a RGBA color withe the given alpha value and with the given offset.
      *
-     * @param   c       DOCUMENT ME!
-     * @param   offset  DOCUMENT ME!
-     * @param   alpha   DOCUMENT ME!
+     * @param   c       RGB color
+     * @param   offset  offset
+     * @param   alpha   alpha value
      *
-     * @return  DOCUMENT ME!
+     * @return  RGBA color
      */
     public static Color getOffsetAlphaColor(final Color c, final Color offset, final int alpha) {
         return new Color(addRGB(c.getRed(), offset.getRed()),
@@ -569,12 +598,13 @@ public class Static2DTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Adds the offset to the color. If value + offset is negative return 0. If value + offset is more than 255 return
+     * 255.
      *
-     * @param   value   DOCUMENT ME!
-     * @param   offset  DOCUMENT ME!
+     * @param   value   original color value
+     * @param   offset  offset to be added
      *
-     * @return  DOCUMENT ME!
+     * @return  The sum of value and offset.
      */
     private static int addRGB(final int value, final int offset) {
         int ret = 0;

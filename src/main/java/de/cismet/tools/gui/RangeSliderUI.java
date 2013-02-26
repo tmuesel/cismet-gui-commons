@@ -432,6 +432,11 @@ public class RangeSliderUI extends BasicSliderUI {
 
         //~ Methods ------------------------------------------------------------
 
+        /**
+         * Checks whether upper thumb or lower thumb is clicked and makes that dragable.
+         *
+         * @param  e  mouse Event
+         */
         @Override
         public void mousePressed(final MouseEvent e) {
             if (!slider.isEnabled()) {
@@ -501,6 +506,11 @@ public class RangeSliderUI extends BasicSliderUI {
             upperDragging = false;
         }
 
+        /**
+         * If click is released disables the dragging.
+         *
+         * @param  e  mouse event
+         */
         @Override
         public void mouseReleased(final MouseEvent e) {
             lowerDragging = false;
@@ -509,6 +519,11 @@ public class RangeSliderUI extends BasicSliderUI {
             super.mouseReleased(e);
         }
 
+        /**
+         * Moves the upper/lower slider depending on which thumb is draged.
+         *
+         * @param  e  DOCUMENT ME!
+         */
         @Override
         public void mouseDragged(final MouseEvent e) {
             if (!slider.isEnabled()) {
@@ -527,6 +542,14 @@ public class RangeSliderUI extends BasicSliderUI {
             }
         }
 
+        /**
+         * Overrides the {@link javax.swing.plaf.basic.BasicSliderUI.TrackListener#shouldScroll(int)}, which does now
+         * nothing else than return <code>false</code>.
+         *
+         * @param   direction  direction
+         *
+         * @return  <code>false</code>
+         */
         @Override
         public boolean shouldScroll(final int direction) {
             return false;

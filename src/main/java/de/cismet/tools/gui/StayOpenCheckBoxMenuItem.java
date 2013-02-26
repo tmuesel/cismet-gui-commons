@@ -102,9 +102,9 @@ public class StayOpenCheckBoxMenuItem extends JCheckBoxMenuItem {
     /**
      * Creates a new StayOpenCheckBoxMenuItem object.
      *
-     * @param  action                   DOCUMENT ME!
-     * @param  selectedBackgroundColor  DOCUMENT ME!
-     * @param  selectedForegroundColor  DOCUMENT ME!
+     * @param  action                   action
+     * @param  selectedBackgroundColor  selected background color
+     * @param  selectedForegroundColor  selected foreground color
      */
     public StayOpenCheckBoxMenuItem(final Action action,
             final Color selectedBackgroundColor,
@@ -143,9 +143,10 @@ public class StayOpenCheckBoxMenuItem extends JCheckBoxMenuItem {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the background color. If this checkbox menu item is selected returns the selected background color.
+     * Otherwise the normal background color.
      *
-     * @return  DOCUMENT ME!
+     * @return  background color
      */
     @Override
     public Color getBackground() {
@@ -157,9 +158,10 @@ public class StayOpenCheckBoxMenuItem extends JCheckBoxMenuItem {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the foreground color. If this checkbox menu item is selected returns the selected foreground color.
+     * Otherwise the normal foreground color.
      *
-     * @return  DOCUMENT ME!
+     * @return  foreground color
      */
     @Override
     public Color getForeground() {
@@ -171,36 +173,36 @@ public class StayOpenCheckBoxMenuItem extends JCheckBoxMenuItem {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the selected background color.
      *
-     * @return  DOCUMENT ME!
+     * @return  selected background color
      */
     public Color getSelectedBackgroundColor() {
         return selectedBackgroundColor;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the selected background color.
      *
-     * @param  selectedBackgroundColor  DOCUMENT ME!
+     * @param  selectedBackgroundColor  selected background color
      */
     public void setSelectedBackgroundColor(final Color selectedBackgroundColor) {
         this.selectedBackgroundColor = selectedBackgroundColor;
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the selected foreground color.
      *
-     * @return  DOCUMENT ME!
+     * @return  selected foreground color
      */
     public Color getSelectedForegroundColor() {
         return selectedForegroundColor;
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the selected foreground color.
      *
-     * @param  selectedForegroundColor  DOCUMENT ME!
+     * @param  selectedForegroundColor  selected foreground color
      */
     public void setSelectedForegroundColor(final Color selectedForegroundColor) {
         this.selectedForegroundColor = selectedForegroundColor;

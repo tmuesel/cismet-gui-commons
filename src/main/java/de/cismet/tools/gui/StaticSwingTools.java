@@ -38,7 +38,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
 /**
- * DOCUMENT ME!
+ * Static gui tools.
  *
  * @author   thorsten.hell@cismet.de
  * @version  $Revision$, $Date$
@@ -52,9 +52,9 @@ public class StaticSwingTools {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Expands all nodes within the given {@link javax.swing.JTree}.
      *
-     * @param  tree  DOCUMENT ME!
+     * @param  tree  <code>JTree</code> whose nodes should be opened.
      */
     public static void jTreeExpandAllNodes(final JTree tree) {
         int row = 0;
@@ -65,9 +65,9 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Expands all nodes within the given {@link javax.swing.JTree} and scrolls to the last leaf of this tree.
      *
-     * @param  tree  DOCUMENT ME!
+     * @param  tree  <code>JTree</code>
      */
     public static void jTreeExpandAllNodesAndScroll2Last(final JTree tree) {
         // expand to the last leaf from the root
@@ -77,9 +77,9 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Collapse all nodes of the given {@link javax.swing.JTree}.
      *
-     * @param  tree  DOCUMENT ME!
+     * @param  tree  <code>JTree</code>
      */
     public static void jTreeCollapseAllNodes(final JTree tree) {
         final TreePath p = tree.getSelectionPath();
@@ -94,13 +94,13 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Find the parent component of given object.
      *
-     * @param   <T>    DOCUMENT ME!
-     * @param   c      DOCUMENT ME!
-     * @param   clazz  DOCUMENT ME!
+     * @param   <T>    any supclass of component
+     * @param   c      container
+     * @param   clazz  object whose parent component is searched
      *
-     * @return  DOCUMENT ME!
+     * @return  parent component
      */
     @SuppressWarnings("unchecked")
     public static <T extends Component> T findSpecificParentComponent(Container c, final Class<T> clazz) {
@@ -111,11 +111,11 @@ public class StaticSwingTools {
         return (T)c;
     }
     /**
-     * From The Java Developers Almanac.
+     * Scrolls the viewport to the given table cell. From The Java Developers Almanac.
      *
-     * @param  table      DOCUMENT ME!
-     * @param  rowIndex   DOCUMENT ME!
-     * @param  vColIndex  DOCUMENT ME!
+     * @param  table      JTable
+     * @param  rowIndex   row index
+     * @param  vColIndex  column index
      */
     public static void jTableScrollToVisible(final JTable table, final int rowIndex, final int vColIndex) {
         if (!(table.getParent() instanceof JViewport)) {
@@ -140,11 +140,11 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns a link with {@link java.awt.dnd.DropTargetDropEvent}.
      *
-     * @param   dtde  DOCUMENT ME!
+     * @param   dtde  <code>DropTargetDropEvent</code>
      *
-     * @return  DOCUMENT ME!
+     * @return  link
      */
     public static String getLinkFromDropEvent(final DropTargetDropEvent dtde) {
         // System.out.println("getLinkFromDropEvent");
@@ -195,11 +195,11 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Adds a tab to the given tabbed pane with vertical text.
      *
-     * @param  tabPane  DOCUMENT ME!
-     * @param  text     DOCUMENT ME!
-     * @param  comp     DOCUMENT ME!
+     * @param  tabPane  the pane where the tab will be added to
+     * @param  text     the text of the tab
+     * @param  comp     the component which will be shown if the tab is selected
      */
     public static void jTabbedPaneWithVerticalTextAddTab(final JTabbedPane tabPane,
             final String text,
@@ -208,12 +208,12 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Adds a tab to the given tabbed pane with vertical text.
      *
-     * @param  tabPane  DOCUMENT ME!
-     * @param  text     DOCUMENT ME!
-     * @param  icon     DOCUMENT ME!
-     * @param  comp     DOCUMENT ME!
+     * @param  tabPane  the pane where the tab will be added to
+     * @param  text     the text of the tab
+     * @param  icon     the icon of the tab
+     * @param  comp     the component which will be shown if the tab is selected
      */
     public static void jTabbedPaneWithVerticalTextAddTab(final JTabbedPane tabPane,
             final String text,
@@ -262,11 +262,11 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the text of the tab associated with the given component.
      *
-     * @param  tabPane  DOCUMENT ME!
-     * @param  text     DOCUMENT ME!
-     * @param  comp     DOCUMENT ME!
+     * @param  tabPane  tabbed pane
+     * @param  text     text
+     * @param  comp     component
      */
     public static void jTabbedPaneWithVerticalTextSetNewText(final JTabbedPane tabPane,
             final String text,
@@ -275,12 +275,12 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the text and the icon of the tab associated with the given component.
      *
-     * @param  tabPane  DOCUMENT ME!
-     * @param  text     DOCUMENT ME!
-     * @param  icon     DOCUMENT ME!
-     * @param  comp     DOCUMENT ME!
+     * @param  tabPane  tabbed pane
+     * @param  text     text
+     * @param  icon     icon
+     * @param  comp     component
      */
     public static void jTabbedPaneWithVerticalTextSetNewText(final JTabbedPane tabPane,
             final String text,
@@ -290,13 +290,13 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the text, textcolor and the icon of the tab associated with the given component.
      *
-     * @param  tabPane    DOCUMENT ME!
-     * @param  text       DOCUMENT ME!
-     * @param  icon       DOCUMENT ME!
-     * @param  textColor  DOCUMENT ME!
-     * @param  comp       DOCUMENT ME!
+     * @param  tabPane    tabbed pane
+     * @param  text       text
+     * @param  icon       icon
+     * @param  textColor  textcolor
+     * @param  comp       component
      */
     public static void jTabbedPaneWithVerticalTextSetNewText(final JTabbedPane tabPane,
             final String text,
@@ -337,11 +337,11 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Creates new tabbed pane object with vertical text.
      *
-     * @param   tabPlacement  DOCUMENT ME!
+     * @param   tabPlacement  placement of the tabs
      *
-     * @return  DOCUMENT ME!
+     * @return  tabbed pane object
      */
     public static JTabbedPane jTabbedPaneWithVerticalTextCreator(final int tabPlacement) {
         final java.util.Enumeration keys = UIManager.getDefaults().keys();
@@ -379,12 +379,13 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Creates new tabbed pane object with vertical text. Same as {@link #jTabbedPaneWithVerticalTextCreator(int)}
+     * because tab layout policy is unused, yet.
      *
-     * @param   tabPlacement     DOCUMENT ME!
-     * @param   tabLayoutPolicy  DOCUMENT ME!
+     * @param   tabPlacement     placement of the tabs
+     * @param   tabLayoutPolicy  unused
      *
-     * @return  DOCUMENT ME!
+     * @return  tabbed pane object
      */
     public static JTabbedPane jTabbedPaneWithVerticalTextCreator(final int tabPlacement, final int tabLayoutPolicy) {
         final JTabbedPane jtp = jTabbedPaneWithVerticalTextCreator(tabPlacement);
@@ -392,9 +393,11 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the style of given {@link javax.swing.JScrollPane}'s {@link javax.swing.JScrollBar JScrollBars} to a nifty
+     * one by making the arrow bottoms invisible and setting the background to the same as the <code>
+     * Scrollpane's</code>.
      *
-     * @param  sPane  DOCUMENT ME!
+     * @param  sPane  Scrollpane which's scrollbars should be modified.
      */
     public static void setNiftyScrollBars(final JScrollPane sPane) {
         Dimension d = sPane.getVerticalScrollBar().getPreferredSize();
@@ -411,34 +414,34 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the first parent frame of the given compontent.
      *
-     * @param   c  DOCUMENT ME!
+     * @param   c  component
      *
-     * @return  DOCUMENT ME!
+     * @return  first parent frame
      */
     public static Frame getFirstParentFrame(final Component c) {
         return getParentFrame(c, true);
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the direct parent frame of the given component.
      *
-     * @param   c  DOCUMENT ME!
+     * @param   c  component
      *
-     * @return  DOCUMENT ME!
+     * @return  parent frame
      */
     public static Frame getParentFrame(final Component c) {
         return getParentFrame(c, false);
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the parent frame of the given component.
      *
-     * @param   c      DOCUMENT ME!
-     * @param   first  DOCUMENT ME!
+     * @param   c      component
+     * @param   first  If true returns the first parent. Otherwise returns the direct parent.
      *
-     * @return  DOCUMENT ME!
+     * @return  parent frame
      */
     public static Frame getParentFrame(final Component c, final boolean first) {
         try {
@@ -478,11 +481,11 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns a rectangle which outlines all given components.
      *
-     * @param   components  DOCUMENT ME!
+     * @param   components  components
      *
-     * @return  DOCUMENT ME!
+     * @return  rectangle
      */
     public static Rectangle getComponentsExtent(final Component... components) {
         final Rectangle r = new Rectangle();
@@ -692,9 +695,9 @@ public class StaticSwingTools {
     }
 
     /**
-     * DOCUMENT ME!
+     * Enables automatic completion of the given {@link javax.swing.JComboBox}.
      *
-     * @param  cbo  DOCUMENT ME!
+     * @param  cbo  combobox
      */
     public static void decorateWithFixedAutoCompleteDecorator(final JComboBox cbo) {
         AutoCompleteDecorator.decorate(cbo);

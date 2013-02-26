@@ -23,7 +23,8 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * DOCUMENT ME!
+ * This class can open a new frame window with a table which contains all properties of the UI. These properties are
+ * only readable and can't edit this way.
  *
  * @author   thorsten.hell@cismet.de x
  * @version  $Revision$, $Date$
@@ -33,16 +34,17 @@ public class TheProperties {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * main method to show the propertyframe.
      *
-     * @param  args  DOCUMENT ME!
+     * @param  args  no arguments valid.
      */
     public static void main(final String[] args) {
         showPropertyFrame();
     }
 
     /**
-     * DOCUMENT ME!
+     * Invoked by the main method. It gets all UI defaults and splits them into keys and values. Then it calls the
+     * {@link #showUIDefaultsGUI(java.lang.Object[][])} method.
      */
     public static void showPropertyFrame() {
         final String SPLIT_STRING = "<=>"; // NOI18N
@@ -53,11 +55,11 @@ public class TheProperties {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns a list of all UI defaults of the {@link javax.swing.UIManager}.
      *
-     * @param   split  DOCUMENT ME!
+     * @param   split  split String
      *
-     * @return  DOCUMENT ME!
+     * @return  list of all UI defaults
      */
     private static List getUIDefaults(final String split) {
         final List list = new ArrayList();
@@ -73,12 +75,13 @@ public class TheProperties {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns a array of all UI defaults of the {@link javax.swing.UIManager}. It is sorted Object[index of row][index
+     * of column].
      *
-     * @param   list   DOCUMENT ME!
-     * @param   split  DOCUMENT ME!
+     * @param   list   unsplitted list
+     * @param   split  split String
      *
-     * @return  DOCUMENT ME!
+     * @return  array of all UI defaults
      */
     private static Object[][] splitUIDefaults(final List list, final String split) {
         final Object[][] data = new Object[list.size()][];
@@ -95,9 +98,9 @@ public class TheProperties {
     }
 
     /**
-     * DOCUMENT ME!
+     * Shows the Frame with the table which contains the UI defaults.
      *
-     * @param  modelData  DOCUMENT ME!
+     * @param  modelData  array of all UI defaults
      */
     public static void showUIDefaultsGUI(final Object[][] modelData) {
         final Object[] colNames = new Object[2];

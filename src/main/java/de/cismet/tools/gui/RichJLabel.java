@@ -20,7 +20,7 @@ import java.awt.font.*;
 import javax.swing.*;
 
 /**
- * DOCUMENT ME!
+ * Extended JLabel with Textshadow.
  *
  * @version  $Revision$, $Date$
  */
@@ -42,8 +42,8 @@ public class RichJLabel extends JLabel {
     /**
      * Creates a new RichJLabel object.
      *
-     * @param  text      DOCUMENT ME!
-     * @param  tracking  DOCUMENT ME!
+     * @param  text      text
+     * @param  tracking  tracking
      */
     public RichJLabel(final String text, final int tracking) {
         super(text);
@@ -53,11 +53,11 @@ public class RichJLabel extends JLabel {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Sets the left shadow's offset and color.
      *
-     * @param  x      DOCUMENT ME!
-     * @param  y      DOCUMENT ME!
-     * @param  color  DOCUMENT ME!
+     * @param  x      X offset
+     * @param  y      Y offset
+     * @param  color  color
      */
     public void setLeftShadow(final int x, final int y, final Color color) {
         left_x = x;
@@ -66,11 +66,11 @@ public class RichJLabel extends JLabel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the right shadow's offset and color.
      *
-     * @param  x      DOCUMENT ME!
-     * @param  y      DOCUMENT ME!
-     * @param  color  DOCUMENT ME!
+     * @param  x      X offset
+     * @param  y      Y offset
+     * @param  color  color
      */
     public void setRightShadow(final int x, final int y, final Color color) {
         right_x = x;
@@ -78,6 +78,11 @@ public class RichJLabel extends JLabel {
         right_color = color;
     }
 
+    /**
+     * Returns the preferred size of this label.
+     *
+     * @return  the preferred size
+     */
     @Override
     public Dimension getPreferredSize() {
         final String text = getText();
@@ -93,6 +98,11 @@ public class RichJLabel extends JLabel {
         return new Dimension(w, h);
     }
 
+    /**
+     * Ppaints the label.
+     *
+     * @param  g  graphics
+     */
     @Override
     public void paintComponent(final Graphics g) {
         ((Graphics2D)g).setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
@@ -125,9 +135,9 @@ public class RichJLabel extends JLabel {
     }
 
     /**
-     * DOCUMENT ME!
+     * main method.
      *
-     * @param  args  DOCUMENT ME!
+     * @param  args  arguments
      */
     public static void main(final String[] args) {
         final RichJLabel label = new RichJLabel("76", 0); // NOI18N
@@ -155,9 +165,9 @@ public class RichJLabel extends JLabel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Prints the given <code>String</code> in the System console.
      *
-     * @param  str  DOCUMENT ME!
+     * @param  str  text to be printed.
      */
     public static void p(final String str) {
         System.out.println(str);

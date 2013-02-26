@@ -23,7 +23,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 /**
- * DOCUMENT ME!
+ * Creates icons with vertical text.
  *
  * @version  $Revision$, $Date$
  */
@@ -45,8 +45,8 @@ public class VerticalTextIcon implements Icon, SwingConstants {
     /**
      * Creates a new VerticalTextIcon object.
      *
-     * @param  text       DOCUMENT ME!
-     * @param  clockwize  DOCUMENT ME!
+     * @param  text       text
+     * @param  clockwize  If <code>true</code> the text is written from top to bottom. Otherwise from bottom to top.
      */
     public VerticalTextIcon(final String text, final boolean clockwize) {
         this(text, clockwize, Color.black);
@@ -54,9 +54,9 @@ public class VerticalTextIcon implements Icon, SwingConstants {
     /**
      * Creates a new VerticalTextIcon object.
      *
-     * @param  text       DOCUMENT ME!
-     * @param  clockwize  DOCUMENT ME!
-     * @param  color      DOCUMENT ME!
+     * @param  text       text
+     * @param  clockwize  If <code>true</code> the text is written from top to bottom. Otherwise from bottom to top.
+     * @param  color      color of the text
      */
     public VerticalTextIcon(final String text, final boolean clockwize, final Color color) {
         this.text = text;
@@ -68,6 +68,14 @@ public class VerticalTextIcon implements Icon, SwingConstants {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Paints the icon with vertical text.
+     *
+     * @param  c  component
+     * @param  g  graphics
+     * @param  x  X coordinate
+     * @param  y  Y coordinate
+     */
     @Override
     public void paintIcon(final Component c, final Graphics g, final int x, final int y) {
         final Graphics2D g2 = (Graphics2D)g;
@@ -92,11 +100,21 @@ public class VerticalTextIcon implements Icon, SwingConstants {
         g2.setTransform(oldTransform);
     }
 
+    /**
+     * Returns the icon height.
+     *
+     * @return  icon height
+     */
     @Override
     public int getIconWidth() {
         return height;
     }
 
+    /**
+     * Returns the icon width.
+     *
+     * @return  icon width
+     */
     @Override
     public int getIconHeight() {
         return width;

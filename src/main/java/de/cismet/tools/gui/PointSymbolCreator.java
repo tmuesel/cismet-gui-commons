@@ -18,7 +18,7 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
 /**
- * DOCUMENT ME!
+ * Creates a point symbol as image.
  *
  * @author   haffkeatcismet
  * @version  $Revision$, $Date$
@@ -28,16 +28,16 @@ public class PointSymbolCreator {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * Erstellt ein Punktsymbol als Image aus den übergebenen Parametern.
+     * Creates a point symbol as image with the specified coords.
      *
-     * @param   drawLine    DOCUMENT ME!
-     * @param   drawFill    DOCUMENT ME!
-     * @param   symbolSize  DOCUMENT ME!
-     * @param   lineWidth   DOCUMENT ME!
-     * @param   fillColor   DOCUMENT ME!
-     * @param   lineColor   DOCUMENT ME!
+     * @param   drawLine    If <code>true</code> draws the outline of the circle. Otherwise not.
+     * @param   drawFill    If <code>true</code> draws the content of the circle.
+     * @param   symbolSize  The size of the circle.
+     * @param   lineWidth   The thickness of the outline of the circle.
+     * @param   fillColor   The color of the content of the circle.
+     * @param   lineColor   The color of the outline of the circle.
      *
-     * @return  DOCUMENT ME!
+     * @return  a point symbol
      */
     public static BufferedImage createPointSymbol(final boolean drawLine,
             final boolean drawFill,

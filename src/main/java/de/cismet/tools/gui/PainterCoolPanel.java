@@ -43,7 +43,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 /**
- * DOCUMENT ME!
+ * Painter class for CoolPanel.
  *
  * @author   dmeiers
  * @version  $Revision$, $Date$
@@ -80,6 +80,11 @@ public class PainterCoolPanel extends JXPanel {
 
     //~ Methods ----------------------------------------------------------------
 
+    /**
+     * Paints the Component and caches the height value.
+     *
+     * @param  g  graphics
+     */
     @Override
     protected void paintComponent(final Graphics g) {
         super.paintComponent(g);
@@ -108,9 +113,9 @@ public class PainterCoolPanel extends JXPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the interaction panel.
      *
-     * @param  panInter  DOCUMENT ME!
+     * @param  panInter  interaction panel
      */
     public void setPanInter(final JComponent panInter) {
         changeFlag = true;
@@ -118,9 +123,9 @@ public class PainterCoolPanel extends JXPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Sets the title panel.
      *
-     * @param  panTitle  DOCUMENT ME!
+     * @param  panTitle  title panel
      */
     public void setPanTitle(final JComponent panTitle) {
         changeFlag = true;
@@ -128,29 +133,29 @@ public class PainterCoolPanel extends JXPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the interaction panel.
      *
-     * @return  DOCUMENT ME!
+     * @return  interaction panel
      */
     public JComponent getPanInter() {
         return panInter;
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns the title panel.
      *
-     * @return  DOCUMENT ME!
+     * @return  title panel
      */
     public JComponent getPanTitle() {
         return panTitle;
     }
 
     /**
-     * Legt das Icon fest, die spaeter in die rechte obere Ecke des CoolPanels gezeichnet werden. Diese sollten das im
-     * Navigator angewaehlte Objekt beschreiben. Icons werden nur gezeichnet, falls sie vorhanden sind. Um mehrere Icons
-     * zu zeichnen, muessen diese mit der Methode Static2DTools.joinIcons() zusammengefuegt werden.
+     * Sets the icon, which is going to be drawn in the upper right corner of the CoolPanel. The icon should descipe the
+     * objects selected in the navigator. Icons will only be drawn if they exist. To draw multiple icons you have to
+     * merge them with {@link de.cismet.tools.gui.Static2DTools#joinIcons(javax.swing.Icon[], int, int, int) }.
      *
-     * @param  icon  das zu zeichnende Icon.
+     * @param  icon  icon to be drawn
      */
     public void setImageRechtsOben(final ImageIcon icon) {
         if (icon != null) {
@@ -186,7 +191,7 @@ public class PainterCoolPanel extends JXPanel {
     }
 
     /**
-     * DOCUMENT ME!
+     * Refreshs the painter.
      */
     private void refreshPainter() {
         if ((panInter == null) || (panTitle == null)) {

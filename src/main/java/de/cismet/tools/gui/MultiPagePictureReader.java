@@ -56,14 +56,16 @@ public class MultiPagePictureReader {
     /**
      * Creates a new MultiPagePictureReader object.
      *
-     * @param   imageFile  iamge
+     * @param   imageFile  imagefile
      *
-     * @throws  IOException  <ul><li>Throws IOException if:</li>
-     * <li>file is not valid (i.e. not existence or access right don't allow access)</li>
-     * <li>iamgeformat is not valid (only tiff or jpeg is allow!)</li>
-     * <li>{@link com.sun.media.jai.codec.FileSeekableStream}</li>
-     * <li>{@link com.sun.media.jai.codec.ImageDecoder#getNumPages()} </li>
-     * </ul>
+     * @throws  IOException  Throws IOException if:
+     *
+     *                       <ul>
+     *                         <li>file is not valid (i.e. not existence or access right don't allow access)</li>
+     *                         <li>imageformat is not valid (only tiff or jpeg is allow!)</li>
+     *                         <li>{@link com.sun.media.jai.codec.FileSeekableStream}</li>
+     *                         <li>{@link com.sun.media.jai.codec.ImageDecoder#getNumPages()}</li>
+     *                       </ul>
      */
     public MultiPagePictureReader(final File imageFile) throws IOException {
         this(imageFile, true, false);
@@ -72,9 +74,16 @@ public class MultiPagePictureReader {
     /**
      * Creates a new MultiPagePictureReader object.
      *
-     * @param   imageURL  DOCUMENT ME!
+     * @param   imageURL  imageurl
      *
-     * @throws  IOException  DOCUMENT ME!
+     * @throws  IOException  Throws IOException if:
+     *
+     *                       <ul>
+     *                         <li>file is not valid (i.e. not existence or access right don't allow access)</li>
+     *                         <li>imageformat is not valid (only tiff or jpeg is allow!)</li>
+     *                         <li>{@link com.sun.media.jai.codec.FileSeekableStream}</li>
+     *                         <li>{@link com.sun.media.jai.codec.ImageDecoder#getNumPages()}</li>
+     *                       </ul>
      */
     public MultiPagePictureReader(final URL imageURL) throws IOException {
         this(imageURL, true, false);
@@ -83,11 +92,18 @@ public class MultiPagePictureReader {
     /**
      * Creates a new MultiPagePictureReader object.
      *
-     * @param   imageFile      DOCUMENT ME!
-     * @param   caching        DOCUMENT ME!
-     * @param   checkHeapSize  DOCUMENT ME!
+     * @param   imageFile      imagefile
+     * @param   caching        If it is set to <code>true</code>, cache is activeted
+     * @param   checkHeapSize  If it is set to <code>true</code>, checkheapsize is activeted
      *
-     * @throws  IOException  DOCUMENT ME!
+     * @throws  IOException  Throws IOException if:
+     *
+     *                       <ul>
+     *                         <li>file is not valid (i.e. not existence or access right don't allow access)</li>
+     *                         <li>imageformat is not valid (only tiff or jpeg is allow!)</li>
+     *                         <li>{@link com.sun.media.jai.codec.FileSeekableStream}</li>
+     *                         <li>{@link com.sun.media.jai.codec.ImageDecoder#getNumPages()}</li>
+     *                       </ul>
      */
     public MultiPagePictureReader(final File imageFile, final boolean caching, final boolean checkHeapSize)
             throws IOException {
@@ -123,12 +139,21 @@ public class MultiPagePictureReader {
     /**
      * Creates a new MultiPagePictureReader object.
      *
-     * @param   imageURL       DOCUMENT ME!
-     * @param   caching        DOCUMENT ME!
-     * @param   checkHeapSize  DOCUMENT ME!
+     * @param   imageURL       imageurl
+     * @param   caching        If it is set to <code>true</code>, cache is activeted
+     * @param   checkHeapSize  If it is set to <code>true</code>, checkheapsize is activeted
      *
-     * @throws  IOException               DOCUMENT ME!
-     * @throws  IllegalArgumentException  DOCUMENT ME!
+     * @throws  IOException               Throws IOException if:
+     *
+     *                                    <ul>
+     *                                      <li>file is not valid (i.e. not existence or access right don't allow
+     *                                        access)</li>
+     *                                      <li>imageformat is not valid (only tiff or jpeg is allow!)</li>
+     *                                      <li>{@link com.sun.media.jai.codec.FileSeekableStream}</li>
+     *                                      <li>{@link com.sun.media.jai.codec.ImageDecoder#getNumPages()}</li>
+     *                                    </ul>
+     * @throws  IllegalArgumentException  Throws IllegalArgumentException with the url is not valid
+     *                                    (==<code>null</code>)
      */
     public MultiPagePictureReader(final URL imageURL, final boolean caching, final boolean checkHeapSize)
             throws IOException {
@@ -193,8 +218,8 @@ public class MultiPagePictureReader {
      *
      * @param   position  position of the image in the cache
      *
-     * @return  the image restored from the cache or <code>null</code> 
-     * if it isn't contained in cache or caching is deactived.
+     * @return  the image restored from the cache or <code>null</code> if it isn't contained in cache or caching is
+     *          deactived.
      */
     private BufferedImage getFromCache(final int position) {
         BufferedImage result = null;
@@ -211,7 +236,7 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * Adds the image to the cache
+     * Adds the image to the cache.
      *
      * @param  position  position where the image should be placed
      * @param  image     iamge to be cached
@@ -221,7 +246,7 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * Returns the number of pages in this instance
+     * Returns the number of pages in this instance.
      *
      * @return  number of pages
      *
@@ -232,14 +257,14 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * Loads the page
+     * Loads the page.
      *
      * @param   page  number of page
      *
      * @return  the page
      *
-     * @throws  IOException  throws IOException if the number is invalid more precily "-1" 
-     * or it is greater than ammount of pages in this instance.
+     * @throws  IOException  throws IOException if the number is invalid more precily: "-1" or it is greater than
+     *                       ammount of pages in this instance.
      */
     public final BufferedImage loadPage(final int page) throws IOException {
         if ((page <= -1) || (page >= pageCount)) {
@@ -292,7 +317,7 @@ public class MultiPagePictureReader {
     }
 
     /**
-     * closes the reader
+     * closes the reader.
      */
     public final void close() {
         try {

@@ -20,8 +20,8 @@ import javax.swing.event.ChangeListener;
 import javax.swing.plaf.metal.MetalSliderUI;
 
 /**
- * <code>UI</code> delegate for the <code>RangeSlider</code> component with Metal L&amp;F. It paints two thumbs, one for the
- * lower value and one for the upper value.
+ * <code>UI</code> delegate for the <code>RangeSlider</code> component with Metal L&amp;F. It paints two thumbs, one for
+ * the lower value and one for the upper value.
  *
  * @version  $Revision$, $Date$
  */
@@ -307,7 +307,8 @@ public class MetalRangeSliderUI extends MetalSliderUI {
      * Moves the selected thumb in the specified direction by a unit increment. This method is called when the user
      * presses one of the arrow keys.
      *
-     * @param  direction  The direction (&gt; 0 means scroll in positive direction, &lt;= 0 scrolls in negative direction).
+     * @param  direction  The direction (&gt; 0 means scroll in positive direction, &lt;= 0 scrolls in negative
+     *                    direction).
      */
     @Override
     public void scrollByUnit(final int direction) {
@@ -337,9 +338,9 @@ public class MetalRangeSliderUI extends MetalSliderUI {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * Invokes when the target of the listener has changed it's state
-         * 
-         * @param arg0 a ChangeEvent object
+         * Invokes when the target of the listener has changed it's state.
+         *
+         * @param  arg0  a ChangeEvent object
          */
         @Override
         public void stateChanged(final ChangeEvent arg0) {
@@ -360,9 +361,9 @@ public class MetalRangeSliderUI extends MetalSliderUI {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * Checks whether upper thumb or lower thumb is clicked and makes that dragable
-         * 
-         * @param e mouse Event
+         * Checks whether upper thumb or lower thumb is clicked and makes that dragable.
+         *
+         * @param  e  mouse Event
          */
         @Override
         public void mousePressed(final MouseEvent e) {
@@ -435,8 +436,8 @@ public class MetalRangeSliderUI extends MetalSliderUI {
 
         /**
          * If click is released disables the dragging.
-         * 
-         * @param e mouse event
+         *
+         * @param  e  mouse event
          */
         @Override
         public void mouseReleased(final MouseEvent e) {
@@ -448,7 +449,8 @@ public class MetalRangeSliderUI extends MetalSliderUI {
 
         /**
          * Moves the upper/lower slider depending on which thumb is draged.
-         * @param e 
+         *
+         * @param  e  DOCUMENT ME!
          */
         @Override
         public void mouseDragged(final MouseEvent e) {
@@ -469,12 +471,12 @@ public class MetalRangeSliderUI extends MetalSliderUI {
         }
 
         /**
-         * Overrides the {@link javax.swing.plaf.basic.BasicSliderUI.TrackListener#shouldScroll(int)}, 
-         * which does now nothing else than return <code>false</code>.
-         * 
-         * @param direction direction
-         * 
-         * @return <code>false</code>
+         * Overrides the {@link javax.swing.plaf.basic.BasicSliderUI.TrackListener#shouldScroll(int)}, which does now
+         * nothing else than return <code>false</code>.
+         *
+         * @param   direction  direction
+         *
+         * @return  <code>false</code>
          */
         @Override
         public boolean shouldScroll(final int direction) {

@@ -31,7 +31,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.text.JTextComponent;
 
 /**
- * DOCUMENT ME!
+ * {@link org.apache.log4j.WriterAppender} extention for append logging information to a JTextArea.
  *
  * @author   thorsten
  * @version  $Revision$, $Date$
@@ -58,8 +58,8 @@ public class TextAreaAppender extends WriterAppender {
     /**
      * Set the target JTextArea for the logging information to appear.
      *
-     * @param  jTextArea  DOCUMENT ME!
-     * @param  regs       DOCUMENT ME!
+     * @param  jTextArea  textarea
+     * @param  regs       textcomponent
      */
     public static void setTextArea(final JTextArea jTextArea, final JTextComponent regs) {
         TextAreaAppender.jTextArea = jTextArea;
@@ -69,7 +69,7 @@ public class TextAreaAppender extends WriterAppender {
     /**
      * Format and then append the loggingEvent to the stored JTextArea.
      *
-     * @param  loggingEvent  DOCUMENT ME!
+     * @param  loggingEvent  logging event
      */
     @Override
     public void append(final LoggingEvent loggingEvent) {
