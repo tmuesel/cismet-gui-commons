@@ -42,9 +42,9 @@ public class ActionGroup {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Adds the given action to the action group and the property change listener.
      *
-     * @param  action  DOCUMENT ME!
+     * @param  action  action to be added
      */
     public void add(final Action action) {
         actions.add(action);
@@ -52,7 +52,7 @@ public class ActionGroup {
     }
 
     /**
-     * DOCUMENT ME!
+     * Removes the given action from the action group and the property change listener.
      *
      * @param  action  DOCUMENT ME!
      */
@@ -61,9 +61,9 @@ public class ActionGroup {
         action.removePropertyChangeListener(selectedListener);
     }
     /**
-     * DOCUMENT ME!
+     * Returns a array list of all actions inside this group.
      *
-     * @return  DOCUMENT ME!
+     * @return  array list of all actions
      */
     public List getActions() {
         return new ArrayList(actions);
@@ -72,7 +72,7 @@ public class ActionGroup {
     //~ Inner Classes ----------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Property change listener.
      *
      * @version  $Revision$, $Date$
      */
@@ -80,6 +80,11 @@ public class ActionGroup {
 
         //~ Methods ------------------------------------------------------------
 
+        /**
+         * This method gets called when a bound property is changed.
+         *
+         * @param  evt  A PropertyChangeEvent object describing the event source and the property that has changed.
+         */
         @Override
         public void propertyChange(final PropertyChangeEvent evt) {
             // prevent any poorly implemented components from

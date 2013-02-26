@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 /**
- * DOCUMENT ME!
+ * Test class for action group.
  *
  * @version  $Revision$, $Date$
  */
@@ -21,9 +21,9 @@ public class ActionGroupTest {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * main method.
      *
-     * @param  args  DOCUMENT ME!
+     * @param  args  line of arguments
      */
     public static void main(final String[] args) {
         final Action a = new TestActionA("Test A"); // NOI18N
@@ -57,7 +57,7 @@ public class ActionGroupTest {
     //~ Inner Classes ----------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Nested test class.
      *
      * @version  $Revision$, $Date$
      */
@@ -68,7 +68,7 @@ public class ActionGroupTest {
         /**
          * Creates a new TestActionA object.
          *
-         * @param  name  DOCUMENT ME!
+         * @param  name  name
          */
         public TestActionA(final String name) {
             super(name);
@@ -77,9 +77,9 @@ public class ActionGroupTest {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * DOCUMENT ME!
+         * Overrides action listener for testing.
          *
-         * @param  arg0  DOCUMENT ME!
+         * @param  arg0  Action event
          */
         @Override
         public void actionPerformed(final ActionEvent arg0) {
@@ -88,7 +88,7 @@ public class ActionGroupTest {
     }
 
     /**
-     * DOCUMENT ME!
+     * Nested test class.
      *
      * @version  $Revision$, $Date$
      */
@@ -99,7 +99,7 @@ public class ActionGroupTest {
         /**
          * Creates a new TestActionB object.
          *
-         * @param  name  DOCUMENT ME!
+         * @param  name  name
          */
         public TestActionB(final String name) {
             super(name);
@@ -108,9 +108,9 @@ public class ActionGroupTest {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * DOCUMENT ME!
+         * Overrides action listener for testing.
          *
-         * @param  arg0  DOCUMENT ME!
+         * @param  arg0  Action event
          */
         @Override
         public void actionPerformed(final ActionEvent arg0) {
@@ -118,7 +118,7 @@ public class ActionGroupTest {
         }
     }
     /**
-     * DOCUMENT ME!
+     * Nested test class.
      *
      * @version  $Revision$, $Date$
      */
@@ -129,7 +129,7 @@ public class ActionGroupTest {
         /**
          * Creates a new TestActionC object.
          *
-         * @param  name  DOCUMENT ME!
+         * @param  name  name
          */
         public TestActionC(final String name) {
             super(name);
@@ -138,9 +138,9 @@ public class ActionGroupTest {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * DOCUMENT ME!
+         * Overrides action listener for testing.
          *
-         * @param  arg0  DOCUMENT ME!
+         * @param  arg0  Action event
          */
         @Override
         public void actionPerformed(final ActionEvent arg0) {

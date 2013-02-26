@@ -20,7 +20,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JToggleButton;
 /**
- * DOCUMENT ME!
+ * A factory that returns components associated with actions within the action group.
  *
  * @version  $Revision$, $Date$
  */
@@ -37,11 +37,11 @@ public final class ComponentFactory {
     //~ Methods ----------------------------------------------------------------
 
     /**
-     * DOCUMENT ME!
+     * Returns {@link javax.swing.JRadioButton} connected with the given action.
      *
-     * @param   action  DOCUMENT ME!
+     * @param   action  Action
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>JRadioButton</code>
      */
     public static AbstractButton getRadioButton(final Action action) {
         final JRadioButton button = new JRadioButton(action);
@@ -50,11 +50,11 @@ public final class ComponentFactory {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns a {@link javax.swing.JToggleButton} connected with the given action.
      *
-     * @param   action  DOCUMENT ME!
+     * @param   action  Action
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>JToggleButton</code>
      */
     public static AbstractButton getToggleButton(final Action action) {
         final JToggleButton button = new JToggleButton(action);
@@ -63,11 +63,11 @@ public final class ComponentFactory {
     }
 
     /**
-     * DOCUMENT ME!
+     * Returns a {@link javax.swing.JRadioButtonMenuItem} connected with the given action.
      *
-     * @param   action  DOCUMENT ME!
+     * @param   action  Action
      *
-     * @return  DOCUMENT ME!
+     * @return  <code>JRadioButtonMenuItem</code>
      */
     public static JMenuItem getRadioMenuItem(final Action action) {
         final JRadioButtonMenuItem menu = new JRadioButtonMenuItem(action);
@@ -76,10 +76,10 @@ public final class ComponentFactory {
     }
 
     /**
-     * DOCUMENT ME!
+     * Connects the given action with the given button.
      *
-     * @param  action  DOCUMENT ME!
-     * @param  button  DOCUMENT ME!
+     * @param  action  Action
+     * @param  button  Button
      */
     private static void connectActionAndButton(final Action action, final AbstractButton button) {
         final SelectionStateAdapter adapter = new SelectionStateAdapter(action, button);
@@ -106,8 +106,8 @@ public final class ComponentFactory {
         /**
          * Creates a new SelectionStateAdapter object.
          *
-         * @param  theAction  DOCUMENT ME!
-         * @param  theButton  DOCUMENT ME!
+         * @param  theAction  Action
+         * @param  theButton  Button
          */
         public SelectionStateAdapter(final Action theAction, final AbstractButton theButton) {
             action = theAction;
@@ -117,12 +117,17 @@ public final class ComponentFactory {
         //~ Methods ------------------------------------------------------------
 
         /**
-         * DOCUMENT ME!
+         * Configures the connection of the state of the action and the state of the button.
          */
         protected void configure() {
             action.addPropertyChangeListener(this);
             button.addItemListener(this);
         }
+        /**
+         * Change the selected state. invokes if the selected status of the item changes.
+         *
+         * @param  e  item event
+         */
         @Override
         public void itemStateChanged(final ItemEvent e) {
             final boolean value = e.getStateChange() == ItemEvent.SELECTED;
@@ -130,6 +135,11 @@ public final class ComponentFactory {
             action.putValue(ActionConstants.SELECTED_KEY, valueObj);
         }
 
+        /**
+         * This method gets called when a bound property is changed.
+         *
+         * @param  evt  A PropertyChangeEvent object describing the event source and the property that has changed.
+         */
         @Override
         public void propertyChange(final PropertyChangeEvent evt) {
             if (evt.getPropertyName().equals(ActionConstants.SELECTED_KEY)) {

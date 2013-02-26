@@ -8,7 +8,7 @@
 package de.cismet.tools.gui.actiongroup;
 
 /**
- * DOCUMENT ME!
+ * Contains the action constants.
  *
  * @author   thorsten.hell@cismet.de
  * @version  $Revision$, $Date$
@@ -17,6 +17,7 @@ public final class ActionConstants {
 
     //~ Static fields/initializers ---------------------------------------------
 
+    /** action constants selected. */
     public static final String SELECTED_KEY = "actionConstants.selected"; // NOI18N
 
     //~ Constructors -----------------------------------------------------------
